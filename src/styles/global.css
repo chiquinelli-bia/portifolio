@@ -1,0 +1,167 @@
+/* fontes com pesos */
+:root {
+  /* === Brand Blue === */
+  --color-brand-blue-100: #4c7bae;
+  --color-brand-blue-200: #266196;
+  --color-brand-blue-300: #004d84;
+  --color-brand-blue-400: #003872;
+  --color-brand-blue-500: #002c5a;
+  --color-brand-blue-600: #001f40;
+  --color-brand-blue-700: #001226;
+
+  /* === Brand Yellow === */
+  --color-brand-yellow-100: #f8e6a8;
+  --color-brand-yellow-200: #f2d98a;
+  --color-brand-yellow-300: #edcc6e;
+  --color-brand-yellow-400: #e9c968;
+  --color-brand-yellow-500: #c6a749;
+  --color-brand-yellow-600: #a38731;
+  --color-brand-yellow-700: #80681d;
+
+  /* === Brand Beige === */
+  --color-brand-beige-100: #fbf6e7;
+  --color-brand-beige-200: #f7eed8;
+  --color-brand-beige-300: #f4e9d1;
+  --color-brand-beige-400: #f1e5ce;
+  --color-brand-beige-500: #d1c3a9;
+  --color-brand-beige-600: #b1a286;
+  --color-brand-beige-700: #918266;
+
+  /* === Headings === */
+  --font-size-heading-xxl: 32px;
+  --line-height-heading-xxl: 1.2;
+
+  --font-size-heading-xl: 29px;
+  --line-height-heading-xl: 1.2;
+  --font-weight-heading-xl: 700;
+
+  --font-size-heading-lg: 26px;
+  --line-height-heading-lg: 1.1;
+  --font-weight-heading-lg: 700;
+
+  --font-size-heading-md: 23px;
+  --line-height-heading-md: 1.1;
+  --font-weight-heading-md: 600;
+
+  --font-size-heading-sm: 21px;
+  --line-height-heading-sm: 1.1;
+
+  /* === Body Text === */
+  --font-size-body-lg: 18px;
+
+  --font-size-body-md: 16px;
+
+  --font-size-body-sm: 14px;
+  --line-height-body: 1.5;
+
+  /* === Buttons === */
+  --font-size-button-xxl: 23px;
+  --line-height-button-xxl: 1.1;
+  --font-weight-button-xxl: 700;
+
+  --font-size-button-lg: 18px;
+  --line-height-button-lg: 1.5;
+  --font-weight-button-lg: 700;
+
+  --font-size-button-md: 16px;
+  --line-height-button-md: 1.5;
+  --font-weight-button-md: 700;
+
+  --font-size-button-sm: 14px;
+  --line-height-button-sm: 1.5;
+  --font-weight-button-sm: 700;
+
+  /* === Navigation === */
+  --font-size-nav-item: 18px;
+  --line-height-nav-item: 1.5;
+
+  --font-size-nav-item-active: 18px;
+  --line-height-nav-item-active: 1.5;
+  --font-weight-nav-item-active: 700;
+}
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+/* =========================================================
+   TYPOGRAPHY CLASSES
+========================================================= */
+.heading-xxl {
+  font-size: var(--font-size-heading-xxl);
+  line-height: var(--line-height-heading-xxl);
+}
+
+.heading-xl {
+  font-size: var(--font-size-heading-xl);
+  line-height: var(--line-height-heading-xl);
+  font-weight: var(--font-weight-heading-xl);
+}
+
+.heading-lg {
+  font-size: var(--font-size-heading-lg);
+  line-height: var(--line-height-heading-lg);
+  font-weight: var(--font-weight-heading-lg);
+}
+.heading-md {
+  font-size: var(--font-size-heading-md);
+  line-height: var(--line-height-heading-md);
+  font-weight: var(--font-weight-heading-md);
+}
+
+.heading-sm {
+  font-size: var(--font-size-heading-sm);
+  line-height: var(--line-height-heading-sm);
+}
