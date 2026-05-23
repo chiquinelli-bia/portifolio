@@ -1,4 +1,4 @@
-/* fontes com pesos */
+@import url("https://fonts.googleapis.com/css2?family=Amita&family=Merriweather:wght@400;600;700&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap");
 :root {
   /* === Brand Blue === */
   --color-brand-blue-100: #4c7bae;
@@ -27,6 +27,11 @@
   --color-brand-beige-600: #b1a286;
   --color-brand-beige-700: #918266;
 
+  /* === Font Family === */
+
+  --font-family-heading: "Merriweather", serif;
+  --font-family-body: "Montserrat", sans-serif;
+  --font-family-decorative: "Amita", cursive;
   /* === Headings === */
   --font-size-heading-xxl: 32px;
   --line-height-heading-xxl: 1.2;
@@ -102,6 +107,7 @@ html {
 body {
   min-height: 100vh;
   line-height: 1.5;
+  font-family: var(--font-family-body);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
@@ -142,26 +148,31 @@ ol {
 .heading-xxl {
   font-size: var(--font-size-heading-xxl);
   line-height: var(--line-height-heading-xxl);
+  font-family: var(--font-family-decorative);
 }
 
 .heading-xl {
   font-size: var(--font-size-heading-xl);
   line-height: var(--line-height-heading-xl);
   font-weight: var(--font-weight-heading-xl);
+  font-family: var(--font-family-heading);
 }
 
 .heading-lg {
   font-size: var(--font-size-heading-lg);
   line-height: var(--line-height-heading-lg);
   font-weight: var(--font-weight-heading-lg);
+  font-family: var(--font-family-heading);
 }
 .heading-md {
   font-size: var(--font-size-heading-md);
   line-height: var(--line-height-heading-md);
   font-weight: var(--font-weight-heading-md);
+  font-family: var(--font-family-heading);
 }
 
 .heading-sm {
   font-size: var(--font-size-heading-sm);
   line-height: var(--line-height-heading-sm);
+  font-family: var(--font-family-heading);
 }
