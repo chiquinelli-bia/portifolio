@@ -1,0 +1,59 @@
+.tag {
+  padding: 0.4rem 1.6rem;
+  border: 0.2rem solid;
+  border-radius: 2.4rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  transition:
+    background-color 0.3s,
+    border-color 0.3s,
+    color 0.3s,
+    transform 0.2s;
+}
+.tag img {
+  width: 2rem;
+}
+.tag:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  filter: grayscale(20%);
+  pointer-events: none;
+}
+
+.primary {
+  background-color: transparent;
+  border-color: var(--color-brand-blue-300);
+  color: var(--color-nav-text);
+}
+.primary:hover {
+  border-color: var(--color-brand-blue-400);
+}
+.primary:active {
+  border-color: var(--color-brand-blue-500);
+  transform: scale(0.98);
+}
+.primary:focus-visible {
+  outline: 0.3rem solid var(--color-brand-blue-200);
+  outline-offset: 0.2rem;
+}
+
+.secondary {
+  background-color: transparent;
+  border-color: var(--color-brand-yellow-200);
+  color: var(--color-brand-beige-100);
+}
+.secondary:hover {
+  border-color: var(--color-brand-yellow-300);
+}
+.secondary:active {
+  border-color: var(--color-brand-yellow-400);
+  transform: scale(0.98);
+}
+.secondary:focus-visible {
+  outline: 0.3rem solid var(--color-brand-yellow-100);
+  outline-offset: 0.2rem;
+}

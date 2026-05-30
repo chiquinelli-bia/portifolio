@@ -27,6 +27,10 @@
   --color-brand-beige-600: #b1a286;
   --color-brand-beige-700: #918266;
 
+  /* === Navigation === */
+
+  --color-nav-text: #0c1522;
+
   /* === Font Family === */
 
   --font-family-heading: "Merriweather", serif;
