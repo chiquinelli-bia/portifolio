@@ -1,0 +1,102 @@
+.button {
+  padding: 0.8rem 2.8rem;
+  border: 0.2rem solid;
+  border-radius: 2.4rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  transition:
+    background-color 0.3s,
+    border-color 0.3s,
+    color 0.3s,
+    transform 0.2s;
+}
+.button img {
+  width: 2rem;
+}
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  filter: grayscale(20%);
+  pointer-events: none;
+}
+
+.primary {
+  background-color: var(--color-brand-blue-400);
+  border-color: var(--color-brand-yellow-300);
+  color: var(--color-brand-yellow-100);
+}
+.primary:hover {
+  background-color: var(--color-brand-blue-500);
+  border-color: var(--color-brand-yellow-400);
+}
+.primary:active {
+  background-color: var(--color-brand-blue-600);
+  border-color: var(--color-brand-yellow-500);
+  transform: scale(0.98);
+}
+.primary:focus-visible {
+  background-color: var(--color-brand-blue-300);
+  outline: 0.3rem solid var(--color-brand-yellow-100);
+  outline-offset: 0.2rem;
+}
+
+.secondary {
+  background-color: var(--color-brand-yellow-200);
+  border-color: var(--color-brand-yellow-500);
+  color: var(--color-brand-blue-300);
+}
+.secondary:hover {
+  background-color: var(--color-brand-yellow-300);
+  border-color: var(--color-brand-yellow-600);
+}
+.secondary:active {
+  background-color: var(--color-brand-yellow-500);
+  border-color: var(--color-brand-yellow-700);
+  transform: scale(0.98);
+}
+.secondary:focus-visible {
+  background-color: var(--color-brand-yellow-100);
+  outline: 0.3rem solid var(--color-brand-yellow-100);
+  outline-offset: 0.2rem;
+}
+
+.outline {
+  background-color: transparent;
+  border-color: var(--color-brand-yellow-300);
+  color: var(--color-brand-blue-300);
+}
+.outline:hover {
+  border-color: var(--color-brand-yellow-400);
+  color: var(--color-brand-blue-400);
+}
+.outline:active {
+  border-color: var(--color-brand-yellow-500);
+  color: var(--color-brand-blue-500);
+  transform: scale(0.98);
+}
+.outline:focus-visible {
+  outline: 0.3rem solid var(--color-brand-yellow-200);
+  color: var(--color-brand-blue-200);
+  outline-offset: 0.2rem;
+}
+
+.ghost {
+  background-color: transparent;
+  border-color: transparent;
+  color: var(--color-brand-blue-300);
+}
+.ghost:hover {
+  color: var(--color-brand-blue-400);
+}
+.ghost:active {
+  color: var(--color-brand-blue-500);
+  transform: scale(0.98);
+}
+.ghost:focus-visible {
+  color: var(--color-brand-blue-200);
+  outline: 3px solid var(--color-brand-blue-100);
+}
