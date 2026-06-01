@@ -1,0 +1,41 @@
+.menu {
+  position: relative;
+  padding-top: 7rem;
+}
+
+.menu li {
+  list-style-type: none;
+}
+
+.menu ul li a {
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  font-size: 1.8rem;
+  display: block;
+  padding: 0px 20px;
+  transition-duration: 0.6s;
+  transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  position: relative;
+}
+
+.menu > ul > li.active > a {
+  color: #5161ce;
+  background-color: transparent;
+  transition: all 0.7s;
+}
+.menuItem {
+  color: var(--color-brand-beige-100);
+  padding: 1.6rem 0;
+}
+.menuHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.menuLink {
+  white-space: nowrap;
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
