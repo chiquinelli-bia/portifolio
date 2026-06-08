@@ -1,41 +1,90 @@
 .menu {
   position: relative;
   padding-top: 7rem;
+  width: 100%;
 }
 
-.menu li {
-  list-style-type: none;
-}
-
-.menu ul li a {
-  color: rgba(255, 255, 255, 0.5);
-  text-decoration: none;
-  font-size: 1.8rem;
-  display: block;
-  padding: 0px 20px;
-  transition-duration: 0.6s;
-  transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  position: relative;
-}
-
-.menu > ul > li.active > a {
-  color: #5161ce;
-  background-color: transparent;
-  transition: all 0.7s;
-}
-.menuItem {
-  color: var(--color-brand-beige-100);
-  padding: 1.6rem 0;
-}
 .menuHeader {
   display: flex;
   align-items: center;
   gap: 0.4rem;
+  padding: 1.6rem;
 }
+
+.menuItem {
+  list-style-type: none;
+}
+.menuItem > div > svg {
+  transition: transform 0.3s ease;
+}
+
+.menuItem:hover > div > svg {
+  transform: rotate(180deg);
+}
+
 .menuLink {
   white-space: nowrap;
-  font-size: 1.8rem;
   display: flex;
   align-items: center;
   gap: 0.6rem;
+  text-decoration: none;
+  font-size: 1.8rem;
+  /* transition-duration: 0.6s;
+  transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55); */
+  transition: color 0.3s ease;
+  position: relative;
+}
+/* .menu > ul > li.active > a {
+  background-color: transparent;
+  transition: all 0.7s;
+} */
+
+.menuItem[data-theme="azul"],
+.subItem[data-theme="azul"] {
+  color: var(--color-brand-beige-100);
+}
+.menuItem[data-theme="beige"],
+.menuItem[data-theme="amarelo"],
+.subItem[data-theme="beige"],
+.subItem[data-theme="amarelo"] {
+  color: var(--color-nav-text);
+}
+.menuItem[data-theme="azul"]:hover {
+  color: var(--color-brand-yellow-100);
+  font-weight: 500;
+}
+.menuItem[data-theme="beige"]:hover,
+.menuItem[data-theme="amarelo"]:hover {
+  color: var(--color-brand-blue-500);
+  font-weight: 500;
+}
+.subList {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+.sublist .open {
+  max-height: 20rem;
+}
+.subItem {
+  padding: 1.4rem 0 1.4rem 3.2rem;
+  font-weight: 600;
+}
+.subItem[data-theme="azul"] {
+  background-color: var(--color-brand-blue-500);
+}
+.subItem[data-theme="beige"] {
+  background-color: var(--color-brand-beige-500);
+}
+.subItem[data-theme="amarelo"] {
+  background-color: var(--color-brand-yellow-400);
+}
+.subItem[data-theme="azul"]:hover {
+  color: var(--color-brand-yellow-100);
+  font-weight: 700;
+}
+.subItem[data-theme="beige"]:hover,
+.subItem[data-theme="amarelo"]:hover {
+  color: var(--color-brand-blue-500);
+  font-weight: 700;
 }
