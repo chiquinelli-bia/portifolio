@@ -1,0 +1,67 @@
+#accordian {
+  width: 22rem;
+  padding: 2.4rem 0;
+  float: left;
+  height: 100vh;
+  overflow-x: hidden;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+#accordian[data-theme="azul"] {
+  background: var(--color-brand-blue-400);
+  --selector-active-before: var(--color-brand-blue-400);
+}
+#accordian[data-theme="beige"] {
+  background: var(--color-brand-beige-300);
+  --selector-active-before: var(--color-brand-beige-300);
+}
+#accordian[data-theme="amarelo"] {
+  background: var(--color-brand-yellow-200);
+  --selector-active-before: var(--color-brand-yellow-200);
+}
+.selectorActive {
+  width: 100%;
+  display: inline-block;
+  position: absolute;
+  height: 37px;
+  top: 0px;
+  left: 0px;
+  transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  background-color: #fff;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+}
+
+.selectorActive .top,
+.selectorActive .bottom {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background-color: #fff;
+  right: 0;
+}
+.selectorActive .top {
+  top: -25px;
+}
+.selectorActive .bottom {
+  bottom: -25px;
+}
+.selectorActive .top:before,
+.selectorActive .bottom:before {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--selector-active-before);
+}
+.selectorActive .top:before {
+  left: -25px;
+  top: -25px;
+}
+.selectorActive .bottom:before {
+  bottom: -25px;
+  left: -25px;
+}

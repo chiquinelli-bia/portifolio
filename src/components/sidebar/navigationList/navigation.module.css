@@ -63,7 +63,7 @@
   overflow: hidden;
   transition: max-height 0.3s ease;
 }
-.sublist .open {
+.subList .open {
   max-height: 20rem;
 }
 .subItem {
