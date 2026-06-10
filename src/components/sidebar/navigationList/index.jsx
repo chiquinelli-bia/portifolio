@@ -1,19 +1,25 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import styles from "./navigation.module.css";
 import { IoIosArrowDown } from "react-icons/io";
-const NavigationList = ({ itens }) => {
+const NavigationList = ({ itens, refLink }) => {
+  const location = useLocation();
   return (
     <ul className={`${styles.showDropdown} ${styles.menu}`}>
       {itens.map((item) => {
         const Icon = item.icon;
         return (
-          <li key={item.id} className={styles.menuItem} data-theme="azul">
+          <li
+            key={item.id}
+            className={styles.menuItem}
+            data-theme="azul"
+            ref={location.pathname === item.rota ? refLink : null}
+          >
             <div className={styles.menuHeader}>
               <NavLink
                 to={item.rota}
-                className={`${styles.menuLink} ${({ isActive }) =>
-                  isActive ? styles.active : ""}
-              `}
+                className={({ isActive }) =>
+                  `${styles.menuLink} ${isActive ? styles.active : ""}`
+                }
               >
                 <Icon size={30} />
                 {/*  onClick={} */}
