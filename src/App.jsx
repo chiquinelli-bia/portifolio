@@ -1,5 +1,6 @@
 import { BrowserRouter } from "react-router-dom";
-import { Menu } from "@/components/navBar";
+import "@/styles/global.css";
+import { Menu } from "@/components/sidebar";
 
 function App() {
   return (
