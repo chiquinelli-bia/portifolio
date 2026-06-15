@@ -1,7 +1,12 @@
 import { NavLink, useLocation } from "react-router-dom";
 import styles from "./navigation.module.css";
 import { IoIosArrowDown } from "react-icons/io";
-const NavigationList = ({ itens, activeItemRef, openSubmenu }) => {
+const NavigationList = ({
+  itens,
+  activeItemRef,
+  openSubmenu,
+  setOpenSubmenu,
+}) => {
   const location = useLocation();
 
   return (
@@ -31,7 +36,9 @@ const NavigationList = ({ itens, activeItemRef, openSubmenu }) => {
                 <button
                   aria-expanded={isOpen}
                   aria-controls={`submenu-${item.id}`}
-                  onClick=""
+                  onClick={() =>
+                    setOpenSubmenu(openSubmenu === item.id ? null : item.id)
+                  }
                 >
                   <IoIosArrowDown size={17} aria-hidden="true" />
                 </button>

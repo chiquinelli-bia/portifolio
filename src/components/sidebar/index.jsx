@@ -4,24 +4,52 @@ import styles from "./sidebar.module.css";
 import { itensNav } from "./navItens";
 import { useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
+import { temas } from "./navThemes";
+
+const temaAtual = temas.hero;
 
 export const Menu = () => {
-  const refAccordian = useRef(null);
-  const refLink = useRef(null);
-  const location = useLocation();
+  const [openSubmenu, setOpenSubmenu] = useState(null);
   const [position, setPosition] = useState({ top: 135, height: 55 });
+  const refAccordian = useRef(null);
+  const activeItemRef = useRef(null);
+  const location = useLocation();
   useEffect(() => {
-    if (!refLink.current || !refAccordian.current) return;
-    const itemRect = refLink.current.getBoundingClientRect();
-    const accordianRect = refAccordian.current.getBoundingClientRect();
-    const top = itemRect.top - accordianRect.top;
-    const height = refLink.current.offsetHeight;
-    setPosition({ top, height });
-  }, [location.pathname]);
+    const el = refAccordian.current;
+    if (!el) return;
+
+    const handle = () => {
+      if (!activeItemRef.current || !refAccordian.current) return;
+
+      const itemRect = activeItemRef.current.getBoundingClientRect();
+      const accordianRect = refAccordian.current.getBoundingClientRect();
+
+      setPosition({
+        top: itemRect.top - accordianRect.top,
+        height: activeItemRef.current.offsetHeight,
+      });
+    };
+
+    el.addEventListener("transitionend", handle);
+
+    return () => el.removeEventListener("transitionend", handle);
+  }, [location.pathname, openSubmenu]);
   return (
     <header>
-      <nav id={styles.accordian} data-theme="azul" ref={refAccordian}>
-        <ButtonLink className="secondary">Fale Comigo</ButtonLink>
+      <nav
+        id={styles.accordian}
+        data-theme={temaAtual.tema}
+        style={{
+          "--selector-active-bg": temaAtual.sectionBg,
+        }}
+        ref={refAccordian}
+      >
+        <ButtonLink
+          data-menu-laco
+          className={temaAtual.tema === "amarelo" ? "primary" : "secondary"}
+        >
+          Fale Comigo
+        </ButtonLink>
         <div
           className={styles.selectorActive}
           style={{
@@ -32,7 +60,12 @@ export const Menu = () => {
           <div className={styles.top}></div>
           <div className={styles.bottom}></div>
         </div>
-        <Navigation itens={itensNav} refLink={refLink} />
+        <Navigation
+          itens={itensNav}
+          activeItemRef={activeItemRef}
+          openSubmenu={openSubmenu}
+          setOpenSubmenu={setOpenSubmenu}
+        />
       </nav>
     </header>
   );
