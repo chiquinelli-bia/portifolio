@@ -30,6 +30,17 @@
   padding: 2.4rem 0;
   background: var(--nav-bg);
 }
+[data-menu-laco]::before {
+  content: "";
+  background-image: url(/src/assets/menuLaco.png);
+  position: absolute;
+  width: 5rem;
+  height: 7.5rem;
+  background-size: contain;
+  left: 0.8rem;
+  top: 1.1rem;
+  background-repeat: no-repeat;
+}
 .selectorActive {
   width: 100%;
   display: inline-block;
