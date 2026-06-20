@@ -1,3 +1,9 @@
+import { Heading } from "@/components/heading";
+
 export const Inicio = () => {
-  return <section></section>;
+  return (
+    <section>
+      <Heading>Olá! eu sou Bianca Chiquinelli.</Heading>
+    </section>
+  );
 };
