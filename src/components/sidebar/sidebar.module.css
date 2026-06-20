@@ -1,35 +1,44 @@
-#accordian {
-  width: 22rem;
-  padding: 2.4rem 0;
-  float: left;
-  height: 100vh;
-  overflow-x: hidden;
-  flex-direction: column;
-  display: flex;
-  align-items: center;
-  position: relative;
-}
 #accordian[data-theme="azul"] {
-  background: var(--color-brand-blue-400);
-  --selector-active-before: var(--color-brand-blue-400);
+  --nav-bg: var(--color-brand-blue-400);
+  --nav-text: var(--color-brand-beige-100);
+  --nav-text-hover: var(--color-brand-yellow-100);
+  --nav-active-text: var(--color-brand-blue-600);
+  --nav-subitem-bg: var(--color-brand-blue-500);
 }
 #accordian[data-theme="beige"] {
-  background: var(--color-brand-beige-300);
-  --selector-active-before: var(--color-brand-beige-300);
+  --nav-bg: var(--color-brand-beige-300);
+  --nav-text: var(--color-nav-text);
+  --nav-text-hover: var(--color-brand-blue-500);
+  --nav-active-text: var(--color-brand-yellow-200);
+  --nav-subitem-bg: var(--color-brand-beige-500);
 }
 #accordian[data-theme="amarelo"] {
-  background: var(--color-brand-yellow-200);
-  --selector-active-before: var(--color-brand-yellow-200);
+  --nav-bg: var(--color-brand-yellow-200);
+  --nav-text: var(--color-nav-text);
+  --nav-text-hover: var(--color-brand-blue-500);
+  --nav-active-text: var(--color-nav-text);
+  --nav-subitem-bg: var(--color-brand-yellow-400);
+}
+#accordian {
+  overflow-x: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 22rem;
+  height: 100vh;
+  padding: 2.4rem 0;
+  background: var(--nav-bg);
 }
 .selectorActive {
   width: 100%;
   display: inline-block;
   position: absolute;
   height: 37px;
-  top: 0px;
-  left: 0px;
-  transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  background-color: #fff;
+  top: 0;
+  left: 0;
+  transition: top 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  background-color: var(--selector-active-bg);
   border-top-left-radius: 50px;
   border-bottom-left-radius: 50px;
 }
@@ -39,7 +48,7 @@
   position: absolute;
   width: 25px;
   height: 25px;
-  background-color: #fff;
+  background-color: var(--selector-active-bg);
   right: 0;
 }
 .selectorActive .top {
@@ -55,7 +64,7 @@
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background-color: var(--selector-active-before);
+  background-color: var(--nav-bg);
 }
 .selectorActive .top:before {
   left: -25px;
