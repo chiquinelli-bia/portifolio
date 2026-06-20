@@ -1,11 +1,16 @@
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "@/styles/global.css";
-import { Menu } from "@/components/sidebar";
+import { LandingPage } from "./pages/landingPage";
+import { MainLayout } from "./pages/layouts/mainLayout";
 
 function App() {
   return (
     <BrowserRouter>
-      <Menu />
+      <Routes>
+        <Route path="/" element={<MainLayout />}>
+          <Route index element={<LandingPage />} />
+        </Route>
+      </Routes>
     </BrowserRouter>
   );
 }
