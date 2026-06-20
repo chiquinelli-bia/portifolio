@@ -13,12 +13,20 @@
 
 .menuItem {
   list-style-type: none;
+  color: var(--nav-text);
 }
-.menuItem > div > svg {
+.menuItem button {
+  color: inherit;
+}
+.menuItem svg {
+  fill: currentColor;
+  stroke: currentColor;
+}
+.menuItem button svg {
   transition: transform 0.3s ease;
 }
 
-.menuItem:hover > div > svg {
+.menuItem:hover > div > button {
   transform: rotate(180deg);
 }
 
@@ -34,57 +42,40 @@
   transition: color 0.3s ease;
   position: relative;
 }
+.menuLink.active,
+.menuLink.active + button {
+  color: var(--nav-active-text);
+}
+.active + button {
+  transform: rotate(180deg);
+}
 /* .menu > ul > li.active > a {
   background-color: transparent;
   transition: all 0.7s;
 } */
 
-.menuItem[data-theme="azul"],
-.subItem[data-theme="azul"] {
-  color: var(--color-brand-beige-100);
-}
-.menuItem[data-theme="beige"],
-.menuItem[data-theme="amarelo"],
-.subItem[data-theme="beige"],
-.subItem[data-theme="amarelo"] {
-  color: var(--color-nav-text);
-}
-.menuItem[data-theme="azul"]:hover {
-  color: var(--color-brand-yellow-100);
-  font-weight: 500;
-}
-.menuItem[data-theme="beige"]:hover,
-.menuItem[data-theme="amarelo"]:hover {
-  color: var(--color-brand-blue-500);
+.menuItem:hover {
+  color: var(--nav-text-hover);
   font-weight: 500;
 }
 .subList {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3s ease;
+  background-color: var(--nav-subitem-bg);
+  transition: max-height 0.2s ease;
 }
-.subList .open {
+.subList.open {
   max-height: 20rem;
+  border-radius: 0 20px 0 0;
 }
+
 .subItem {
   padding: 1.4rem 0 1.4rem 3.2rem;
   font-weight: 600;
+  border-radius: 0 0.2rem 0 0;
+  color: var(--nav-text);
 }
-.subItem[data-theme="azul"] {
-  background-color: var(--color-brand-blue-500);
-}
-.subItem[data-theme="beige"] {
-  background-color: var(--color-brand-beige-500);
-}
-.subItem[data-theme="amarelo"] {
-  background-color: var(--color-brand-yellow-400);
-}
-.subItem[data-theme="azul"]:hover {
-  color: var(--color-brand-yellow-100);
-  font-weight: 700;
-}
-.subItem[data-theme="beige"]:hover,
-.subItem[data-theme="amarelo"]:hover {
-  color: var(--color-brand-blue-500);
+.subItem:hover {
+  color: var(--nav-text-hover);
   font-weight: 700;
 }
