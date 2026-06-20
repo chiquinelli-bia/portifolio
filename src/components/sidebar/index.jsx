@@ -10,29 +10,29 @@ const temaAtual = temas.hero;
 
 export const Menu = () => {
   const [openSubmenu, setOpenSubmenu] = useState(null);
-  const [position, setPosition] = useState({ top: 135, height: 55 });
+  const [position, setPosition] = useState({ top: 140, height: 60 });
   const refAccordian = useRef(null);
   const activeItemRef = useRef(null);
   const location = useLocation();
   useEffect(() => {
-    const el = refAccordian.current;
-    if (!el) return;
-
-    const handle = () => {
+    const calculatePosition = () => {
       if (!activeItemRef.current || !refAccordian.current) return;
 
       const itemRect = activeItemRef.current.getBoundingClientRect();
       const accordianRect = refAccordian.current.getBoundingClientRect();
-
       setPosition({
         top: itemRect.top - accordianRect.top,
         height: activeItemRef.current.offsetHeight,
       });
     };
+    calculatePosition();
+    const el = refAccordian.current;
+    if (!el) return;
 
-    el.addEventListener("transitionend", handle);
-
-    return () => el.removeEventListener("transitionend", handle);
+    el.addEventListener("transitionend", calculatePosition);
+    return () => {
+      el.removeEventListener("transitionend", calculatePosition);
+    };
   }, [location.pathname, openSubmenu]);
   return (
     <header>
