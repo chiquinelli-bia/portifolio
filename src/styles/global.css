@@ -116,6 +116,15 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
+main {
+  display: flex;
+}
+
+section {
+  padding: 4rem;
+  width: 100%;
+  min-height: 100vh;
+}
 
 img,
 picture,
@@ -154,6 +163,7 @@ ol {
   font-size: var(--font-size-heading-xxl);
   line-height: var(--line-height-heading-xxl);
   font-family: var(--font-family-decorative);
+  color: var(--color-nav-text);
 }
 
 .heading-xl {
