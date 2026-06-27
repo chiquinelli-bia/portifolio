@@ -1,0 +1,58 @@
+.container {
+  display: flex;
+  align-items: center;
+  background: var(--color-brand-beige-400);
+  column-gap: 10rem;
+  padding: 0 10rem;
+}
+
+.textoDestaque {
+  background: linear-gradient(
+    90deg,
+    var(--color-brand-yellow-500) 25%,
+    var(--color-brand-blue-500),
+    var(--color-brand-blue-700) 90%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.acoesWrapper {
+  display: flex;
+  justify-content: space-between;
+  max-width: 46.5rem;
+  width: 100%;
+}
+.conteudoWrapper {
+  display: flex;
+  flex: 1;
+  gap: 3.2rem;
+  flex-direction: column;
+}
+
+.fotoWrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding-right: 9rem;
+}
+
+.fotoWrapper::before {
+  content: "";
+  position: absolute;
+  width: 34.5rem;
+  height: 56rem;
+  background: var(--color-brand-blue-600);
+  border-radius: 0 0 35rem 35rem;
+  left: 38%;
+  top: -11rem;
+  transform: translateX(-20%);
+}
+
+.fotoPerfil {
+  position: relative;
+  width: 37rem;
+  height: 47rem;
+  filter: drop-shadow(var(--shadow-depth-surface-dark));
+}

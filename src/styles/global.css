@@ -87,8 +87,10 @@
   --font-size-nav-item-active: 18px;
   --line-height-nav-item-active: 1.5;
   --font-weight-nav-item-active: 700;
-}
 
+  /* === Elevations === */
+  --shadow-depth-surface-dark: 0 0.8rem 1rem rgba(0, 0, 0, 0.2);
+}
 /* =========================================================
    RESET
 ========================================================= */
@@ -132,6 +134,11 @@ svg,
 video {
   display: block;
   max-width: 100%;
+}
+img,
+picture,
+svg {
+  image-rendering: auto;
 }
 
 button,
