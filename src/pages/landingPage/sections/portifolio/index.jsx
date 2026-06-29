@@ -1,3 +1,9 @@
+import { Gallery } from "./gallery";
+
 export const Portifolio = () => {
-  return <section>Portifolio</section>;
+  return (
+    <section>
+      <Gallery />
+    </section>
+  );
 };
