@@ -1,0 +1,44 @@
+.carouselButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background-color 0.2s ease;
+}
+
+.carouselButton:hover {
+  background-color: color-mix(
+    in srgb,
+    var(--color-brand-yellow-500) 15%,
+    transparent
+  );
+}
+
+.carouselButton:focus-visible {
+  outline: 2px solid var(--color-brand-yellow-100);
+  outline-offset: 2px;
+}
+
+.icon {
+  color: var(--color-brand-blue-400);
+  min-width: 6rem;
+  min-height: 6rem;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.carouselButton:hover .icon {
+  color: var(--color-brand-blue-500);
+  transform: scale(1.08);
+}
+
+.carouselButton:active .icon {
+  color: var(--color-brand-blue-600);
+  transform: scale(0.95);
+}
