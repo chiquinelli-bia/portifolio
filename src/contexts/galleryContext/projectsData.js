@@ -1,3 +1,14 @@
+import {
+  AluraBooksCover,
+  CodeConnect01,
+  CodeConnect02,
+  CodeConnectCover,
+  fokus01,
+  fokus02,
+  fokusCover,
+  memotecaCover,
+} from "../../assets/projects/index.js";
+
 export const projectsData = [
   {
     id: 1,
@@ -8,15 +19,15 @@ export const projectsData = [
       "Cronômetro regressivo com feedback visual integrado a um gerenciador de tarefas com persistência local. Focado em interação, eventos e organização de dados.",
 
     images: {
-      cover: "",
-      gallery: [],
+      cover: fokusCover,
+      gallery: [fokus01, fokus02],
     },
 
     technologies: [],
 
     links: {
-      repository: "",
-      demo: "",
+      repository: "https://github.com/chiquinelli-bia/fokus",
+      demo: "https://fokus-delta-five.vercel.app/",
     },
 
     features: [
@@ -37,22 +48,22 @@ export const projectsData = [
 
   {
     id: 2,
-    title: "CodeConnect",
+    title: "Code Connect",
     slug: "codeconnect",
 
     description:
       "Interface de publicação com upload e pré-visualização de imagens, formulários para descrição, tags e controle de ações. Estrutura responsiva com navegação lateral, priorizando clareza, agilidade e controle do conteúdo.",
 
     images: {
-      cover: "",
-      gallery: [],
+      cover: CodeConnectCover,
+      gallery: [CodeConnect01, CodeConnect02],
     },
 
     technologies: [],
 
     links: {
-      repository: "",
-      demo: "",
+      repository: "https://github.com/chiquinelli-bia/3802-CodeConnect",
+      demo: "https://3802-code-connect.vercel.app/",
     },
 
     features: [
@@ -80,15 +91,15 @@ export const projectsData = [
       "Organizador de pensamentos com operações CRUD, busca typeahead e validação de dados, projetado para oferecer uma experiência ágil, clara e consistente.",
 
     images: {
-      cover: "",
+      cover: memotecaCover,
       gallery: [],
     },
 
     technologies: [],
 
     links: {
-      repository: "",
-      demo: "",
+      repository: "https://github.com/chiquinelli-bia/3781-memoteca",
+      demo: "https://3781-memoteca.vercel.app/",
     },
 
     features: [
@@ -111,22 +122,22 @@ export const projectsData = [
 
   {
     id: 4,
-    title: "AluraBooks",
+    title: "Alura Books",
     slug: "alurabooks",
 
     description:
       "Página dinâmica de livros com filtros, ordenação e atualização em tempo real via API, projetada para uma navegação clara, acessível e confiável.",
 
     images: {
-      cover: "",
+      cover: AluraBooksCover,
       gallery: [],
     },
 
     technologies: [],
 
     links: {
-      repository: "",
-      demo: "",
+      repository: "https://github.com/chiquinelli-bia/alura-books",
+      demo: "https://alura-books-eight-blue.vercel.app/",
     },
 
     features: [
