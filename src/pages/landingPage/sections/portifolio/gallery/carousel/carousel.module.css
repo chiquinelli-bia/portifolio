@@ -1,13 +1,16 @@
+.container {
+  display: flex;
+  flex: 1;
+  backface-visibility: hidden;
+  will-change: transform;
+  align-items: center;
+}
 .embla__viewport {
   overflow: hidden;
+  border-radius: 0.4rem;
 }
 
 .embla__container {
   display: flex;
   touch-action: pan-y pinch-zoom;
-}
-
-.embla__slide {
-  flex: 0 0 100%;
-  min-width: 0;
 }

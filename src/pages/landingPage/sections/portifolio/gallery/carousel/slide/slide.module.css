@@ -1,0 +1,17 @@
+.embla__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+.imageBorder {
+  width: 100%;
+  background-color: var(--color-brand-blue-300);
+  padding: 0.8rem;
+  aspect-ratio: 5 / 3;
+  box-sizing: border-box;
+}
+.imageBorder img {
+  width: 100%;
+  object-fit: cover;
+  height: 100%;
+  border-radius: 1.2rem;
+}
