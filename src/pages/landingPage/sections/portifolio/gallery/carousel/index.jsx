@@ -3,12 +3,27 @@ import styles from "./carousel.module.css";
 import { CarouselButton } from "./carouselButton";
 import { useGalleryContext } from "@/contexts/galleryContext/galleryContext";
 import { ProjectSlide } from "./slide";
+import { useEffect } from "react";
+import { ThumbsPreview } from "./thumbsPreview";
 
 export const Carousel = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false });
+
   const scrollPrev = () => emblaApi?.scrollPrev();
   const scrollNext = () => emblaApi?.scrollNext();
-  const { projects } = useGalleryContext();
+  const { projects, setCurrentIndex } = useGalleryContext();
+
+  useEffect(() => {
+    if (!emblaApi) return;
+
+    const onSelect = () => {
+      setCurrentIndex(emblaApi.selectedScrollSnap());
+    };
+
+    emblaApi.on("select", onSelect);
+
+    onSelect();
+  }, [emblaApi, setCurrentIndex]);
 
   return (
     <div className={styles.container}>
@@ -21,6 +36,7 @@ export const Carousel = () => {
         </div>
       </div>
       <CarouselButton direction="Rigth" onClick={scrollNext} />
+      <ThumbsPreview projects={projects} emblaApi={emblaApi} />
     </div>
   );
 };
