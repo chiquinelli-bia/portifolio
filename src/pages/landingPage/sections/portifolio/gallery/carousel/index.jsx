@@ -26,16 +26,20 @@ export const Carousel = () => {
   }, [emblaApi, setCurrentIndex]);
 
   return (
-    <div className={styles.container}>
-      <CarouselButton direction="left" onClick={scrollPrev} />
-      <div className={styles.embla__viewport} ref={emblaRef}>
-        <div className={styles.embla__container}>
-          {projects.map((project) => (
-            <ProjectSlide key={project.id} project={project} />
-          ))}
+    <div className={styles.carousel}>
+      <div className={styles.container}>
+        <CarouselButton direction="left" onClick={scrollPrev} />
+        <div className={styles.carouselShadow}>
+          <div className={styles.embla__viewport} ref={emblaRef}>
+            <div className={styles.embla__container}>
+              {projects.map((project) => (
+                <ProjectSlide key={project.id} project={project} />
+              ))}
+            </div>
+          </div>
         </div>
+        <CarouselButton direction="Rigth" onClick={scrollNext} />
       </div>
-      <CarouselButton direction="Rigth" onClick={scrollNext} />
       <ThumbsPreview projects={projects} emblaApi={emblaApi} />
     </div>
   );
