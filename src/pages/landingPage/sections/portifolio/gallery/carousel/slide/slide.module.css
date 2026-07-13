@@ -8,6 +8,7 @@
   padding: 0.8rem;
   aspect-ratio: 5 / 3;
   box-sizing: border-box;
+  border-radius: 0.6rem;
 }
 .imageBorder img {
   width: 100%;

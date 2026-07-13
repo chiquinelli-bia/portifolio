@@ -1,3 +1,3 @@
 export const Info = () => {
-  return <div style={{ width: "50%" }}>Info</div>;
+  return <div style={{ flex: "1" }}>Info</div>;
 };

@@ -89,7 +89,9 @@
   --font-weight-nav-item-active: 700;
 
   /* === Elevations === */
-  --shadow-depth-surface-dark: 0 0.8rem 1rem rgba(0, 0, 0, 0.2);
+  --shadow-depth-surface-dark: 0 0.8rem 1rem #00000033;
+  --shadow-depth-surface-yellow: 0 0.8rem 1rem #a3873133;
+  --shadow-highlight-surface-yellow: 0 0.8rem 2rem rgba(163, 135, 49, 0.35);
 }
 /* =========================================================
    RESET
