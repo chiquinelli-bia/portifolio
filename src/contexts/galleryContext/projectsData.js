@@ -18,10 +18,7 @@ export const projectsData = [
     description:
       "Cronômetro regressivo com feedback visual integrado a um gerenciador de tarefas com persistência local. Focado em interação, eventos e organização de dados.",
 
-    images: {
-      cover: fokusCover,
-      gallery: [fokus01, fokus02],
-    },
+    images: [fokusCover, fokus01, fokus02],
 
     technologies: [],
 
@@ -54,10 +51,7 @@ export const projectsData = [
     description:
       "Interface de publicação com upload e pré-visualização de imagens, formulários para descrição, tags e controle de ações. Estrutura responsiva com navegação lateral, priorizando clareza, agilidade e controle do conteúdo.",
 
-    images: {
-      cover: CodeConnectCover,
-      gallery: [CodeConnect01, CodeConnect02],
-    },
+    images: [CodeConnectCover, CodeConnect01, CodeConnect02],
 
     technologies: [],
 
@@ -90,11 +84,7 @@ export const projectsData = [
     description:
       "Organizador de pensamentos com operações CRUD, busca typeahead e validação de dados, projetado para oferecer uma experiência ágil, clara e consistente.",
 
-    images: {
-      cover: memotecaCover,
-      gallery: [],
-    },
-
+    images: [memotecaCover],
     technologies: [],
 
     links: {
@@ -128,10 +118,7 @@ export const projectsData = [
     description:
       "Página dinâmica de livros com filtros, ordenação e atualização em tempo real via API, projetada para uma navegação clara, acessível e confiável.",
 
-    images: {
-      cover: AluraBooksCover,
-      gallery: [],
-    },
+    images: [AluraBooksCover],
 
     technologies: [],
 
