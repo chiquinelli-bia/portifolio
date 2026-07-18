@@ -10,9 +10,22 @@
   box-sizing: border-box;
   border-radius: 0.6rem;
 }
-.imageBorder img {
+.image {
   width: 100%;
   object-fit: cover;
   height: 100%;
   border-radius: 1.2rem;
+  animation: imageChange 200ms ease-in-out;
+}
+
+@keyframes imageChange {
+  from {
+    opacity: 0.9;
+    transform: scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }

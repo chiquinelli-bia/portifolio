@@ -7,23 +7,33 @@ import { useEffect } from "react";
 import { ThumbsPreview } from "./thumbsPreview";
 
 export const Carousel = () => {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false });
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    loop: false,
+    duration: 30,
+  });
 
   const scrollPrev = () => emblaApi?.scrollPrev();
   const scrollNext = () => emblaApi?.scrollNext();
-  const { projects, setCurrentIndex } = useGalleryContext();
+  const {
+    projects,
+    setCurrentIndex,
+    currentIndex,
+    setCurrentImage,
+    currentImage,
+  } = useGalleryContext();
 
   useEffect(() => {
     if (!emblaApi) return;
 
     const onSelect = () => {
       setCurrentIndex(emblaApi.selectedScrollSnap());
+      setCurrentImage(0);
     };
 
     emblaApi.on("select", onSelect);
 
     onSelect();
-  }, [emblaApi, setCurrentIndex]);
+  }, [emblaApi, setCurrentIndex, setCurrentImage]);
 
   return (
     <div className={styles.carousel}>
@@ -39,6 +49,23 @@ export const Carousel = () => {
           </div>
         </div>
         <CarouselButton direction="Rigth" onClick={scrollNext} />
+      </div>
+      <div
+        role="group"
+        className={styles.containerPagination}
+        aria-label="Selecionar imagem do projeto"
+      >
+        {projects[currentIndex].images.map((image, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentImage(index)}
+            aria-label={`Ir para a imagem ${index + 1}`}
+            aria-pressed={index === currentImage ? "true" : undefined}
+            className={`${styles.dotsPagination} ${
+              index === currentImage ? styles.active : ""
+            }`}
+          ></button>
+        ))}
       </div>
       <ThumbsPreview projects={projects} emblaApi={emblaApi} />
     </div>

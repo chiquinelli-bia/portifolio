@@ -12,10 +12,18 @@ const useGalleryContext = () => {
 function GalleryContextProvider({ children }) {
   const [projects, setProjects] = useState(projectsData);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentImage, setCurrentImage] = useState(0);
 
   return (
     <GalleryContext.Provider
-      value={{ projects, setProjects, currentIndex, setCurrentIndex }}
+      value={{
+        projects,
+        setProjects,
+        currentIndex,
+        setCurrentIndex,
+        currentImage,
+        setCurrentImage,
+      }}
     >
       {children}
     </GalleryContext.Provider>
