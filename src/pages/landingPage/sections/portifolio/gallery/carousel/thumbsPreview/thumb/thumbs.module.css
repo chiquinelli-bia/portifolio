@@ -1,7 +1,9 @@
+.thumbButton {
+  box-shadow: var(--shadow-depth-surface-yellow);
+}
 .thumb {
   min-height: 8.8rem;
   min-width: 17.2rem;
-  box-shadow: var(--shadow-depth-surface-yellow);
   filter: brightness(0.9);
   transition:
     filter 250ms ease,
