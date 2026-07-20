@@ -55,12 +55,12 @@ export const Carousel = () => {
         className={styles.containerPagination}
         aria-label="Selecionar imagem do projeto"
       >
-        {projects[currentIndex].images.map((image, index) => (
+        {projects[currentIndex]?.images.map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrentImage(index)}
             aria-label={`Ir para a imagem ${index + 1}`}
-            aria-pressed={index === currentImage ? "true" : undefined}
+            aria-current={index === currentImage}
             className={`${styles.dotsPagination} ${
               index === currentImage ? styles.active : ""
             }`}
