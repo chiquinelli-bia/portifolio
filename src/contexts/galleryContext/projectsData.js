@@ -1,4 +1,5 @@
 import {
+  aluraBooks01,
   AluraBooksCover,
   CodeConnect01,
   CodeConnect02,
@@ -6,6 +7,8 @@ import {
   fokus01,
   fokus02,
   fokusCover,
+  memoteca01,
+  memoteca02,
   memotecaCover,
 } from "../../assets/projects/index.js";
 
@@ -84,7 +87,7 @@ export const projectsData = [
     description:
       "Organizador de pensamentos com operações CRUD, busca typeahead e validação de dados, projetado para oferecer uma experiência ágil, clara e consistente.",
 
-    images: [memotecaCover],
+    images: [memotecaCover, memoteca01, memoteca02],
     technologies: [],
 
     links: {
@@ -118,7 +121,7 @@ export const projectsData = [
     description:
       "Página dinâmica de livros com filtros, ordenação e atualização em tempo real via API, projetada para uma navegação clara, acessível e confiável.",
 
-    images: [AluraBooksCover],
+    images: [AluraBooksCover, aluraBooks01],
 
     technologies: [],
 
