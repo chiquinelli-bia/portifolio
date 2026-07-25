@@ -10,7 +10,15 @@ import {
   memoteca01,
   memoteca02,
   memotecaCover,
-} from "../../assets/projects/index.js";
+} from "@/assets/projects/index.js";
+import {
+  Html,
+  Css,
+  JavaScript,
+  Vite,
+  React,
+  Axios,
+} from "@/assets/technologies/index.js";
 
 export const projectsData = [
   {
@@ -23,7 +31,7 @@ export const projectsData = [
 
     images: [fokusCover, fokus01, fokus02],
 
-    technologies: [],
+    technologies: [Html, Css, JavaScript, Vite],
 
     links: {
       repository: "https://github.com/chiquinelli-bia/fokus",
@@ -56,7 +64,7 @@ export const projectsData = [
 
     images: [CodeConnectCover, CodeConnect01, CodeConnect02],
 
-    technologies: [],
+    technologies: [Html, Css, JavaScript, Vite, React, Axios],
 
     links: {
       repository: "https://github.com/chiquinelli-bia/3802-CodeConnect",
@@ -88,7 +96,7 @@ export const projectsData = [
       "Organizador de pensamentos com operações CRUD, busca typeahead e validação de dados, projetado para oferecer uma experiência ágil, clara e consistente.",
 
     images: [memotecaCover, memoteca01, memoteca02],
-    technologies: [],
+    technologies: [Html, Css, JavaScript, Axios, Vite],
 
     links: {
       repository: "https://github.com/chiquinelli-bia/3781-memoteca",
@@ -123,7 +131,7 @@ export const projectsData = [
 
     images: [AluraBooksCover, aluraBooks01],
 
-    technologies: [],
+    technologies: [Html, Css, JavaScript, Vite],
 
     links: {
       repository: "https://github.com/chiquinelli-bia/alura-books",
