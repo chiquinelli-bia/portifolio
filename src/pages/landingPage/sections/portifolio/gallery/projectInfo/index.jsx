@@ -1,6 +1,7 @@
 import { Heading } from "@/components/heading";
 import { useGalleryContext } from "@/contexts/galleryContext/galleryContext";
 import styles from "./projectInfo.module.css";
+import { ButtonLink } from "@/components/button/buttonLink";
 
 export const Info = () => {
   const { projects, currentIndex } = useGalleryContext();
@@ -37,12 +38,23 @@ export const Info = () => {
           <ul className={styles.technologiesList}>
             {currentProject.technologies.map((Tech, index) => (
               <li key={index}>
-                {" "}
-                <Tech />{" "}
+                <Tech />
               </li>
             ))}
           </ul>
-          <div className={styles.containerButton}></div>
+          <div className={styles.containerButton}>
+            <div>
+              <ButtonLink path={currentProject.links.repository}>
+                Ver Projeto
+              </ButtonLink>
+              <ButtonLink path={currentProject.links.demo}>
+                Ver Código
+              </ButtonLink>
+            </div>
+            <ButtonLink className="outline" path="/projetos">
+              Outras Obras...
+            </ButtonLink>
+          </div>
         </div>
       </div>
     </div>
