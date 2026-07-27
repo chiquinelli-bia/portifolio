@@ -1,0 +1,14 @@
+.ornament {
+  width: 100%;
+  max-width: 451px;
+  display: block;
+  margin-top: -12px;
+
+  --ornament-primary: var(--color-brand-blue-100);
+  --ornament-secondary: var(--color-brand-blue-300);
+}
+
+.brand-yellow {
+  --ornament-primary: var(--color-brand-yellow-100);
+  --ornament-secondary: var(--color-brand-yellow-300);
+}
