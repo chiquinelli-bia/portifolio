@@ -1,5 +1,6 @@
 .container {
   display: flex;
   align-items: center;
+  gap: 3.6rem;
   background: var(--color-brand-yellow-200);
 }
