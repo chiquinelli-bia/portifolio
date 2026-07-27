@@ -34,7 +34,14 @@ export const Info = () => {
           <Heading as="h4" variant="md">
             Tecnologias Utilizadas
           </Heading>
-          <ul className={styles.technologiesList}></ul>
+          <ul className={styles.technologiesList}>
+            {currentProject.technologies.map((Tech, index) => (
+              <li key={index}>
+                {" "}
+                <Tech />{" "}
+              </li>
+            ))}
+          </ul>
           <div className={styles.containerButton}></div>
         </div>
       </div>
