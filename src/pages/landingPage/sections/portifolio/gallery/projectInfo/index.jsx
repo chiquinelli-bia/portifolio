@@ -18,11 +18,19 @@ export const Info = () => {
           <Heading as="h4" variant="md">
             Funcionalidades
           </Heading>
-          <ul className={styles.featureList}></ul>
+          <ul className={styles.featureList}>
+            {currentProject.features.map((feat, index) => (
+              <li key={index}>{feat}</li>
+            ))}
+          </ul>
           <Heading as="h4" variant="md">
             Desafio & Conquista
           </Heading>
-          <ul className={styles.highlightList}></ul>
+          <ul className={styles.highlightList}>
+            {currentProject.highlights.map((highlight, index) => (
+              <li key={index}>{highlight}</li>
+            ))}
+          </ul>
           <Heading as="h4" variant="md">
             Tecnologias Utilizadas
           </Heading>
