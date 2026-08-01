@@ -6,13 +6,13 @@ export const itensNav = [
   {
     id: "home",
     texto: "Início",
-    rota: "/",
+    rota: "#inicio",
     icon: IoHomeOutline,
   },
   {
     id: "portfolio",
     texto: "Portifolio",
-    rota: "/portfolio",
+    rota: "#portifolio",
     icon: IoMdImages,
     subItem: {
       id: "outras-obras",
@@ -23,7 +23,7 @@ export const itensNav = [
   {
     id: "about",
     texto: "Quem Sou",
-    rota: "/quem-sou",
+    rota: "#quem-sou",
     icon: RiFilePaper2Line,
     subItem: {
       id: "curriculo",
@@ -34,7 +34,7 @@ export const itensNav = [
   {
     id: "contact",
     texto: "Fale Comigo",
-    rota: "/contato",
+    rota: "#contato",
     icon: GiRotaryPhone,
   },
 ];

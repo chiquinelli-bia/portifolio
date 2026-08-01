@@ -1,4 +1,5 @@
-import { NavLink, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 import styles from "./navigation.module.css";
 import { IoIosArrowDown } from "react-icons/io";
 const NavigationList = ({
@@ -13,9 +14,8 @@ const NavigationList = ({
     <ul className={`${styles.showDropdown} ${styles.menu}`}>
       {itens.map((item) => {
         const Icon = item.icon;
-        const isCurrentPage = location.pathname === item.rota;
-        const isActive =
-          isCurrentPage || location.pathname === item.subItem?.rota;
+        const isCurrentPage = location.hash === item.rota;
+        const isActive = isCurrentPage || location.hash === item.subItem?.rota;
         const isOpen = openSubmenu === item.id || isActive;
         return (
           <li key={item.id} className={styles.menuItem}>
@@ -23,15 +23,14 @@ const NavigationList = ({
               className={styles.menuHeader}
               ref={isCurrentPage ? activeItemRef : null}
             >
-              <NavLink
+              <HashLink
                 to={item.rota}
-                className={({ isActive }) =>
-                  `${styles.menuLink} ${isActive ? styles.active : ""}`
-                }
+                smooth={item.rota.startsWith("#")}
+                className={`${styles.menuLink} ${isActive ? styles.active : ""}`}
               >
                 <Icon size={30} aria-hidden="true" />
                 {item.texto}
-              </NavLink>
+              </HashLink>
               {item.subItem && (
                 <button
                   aria-expanded={isOpen}
@@ -51,9 +50,13 @@ const NavigationList = ({
               >
                 {" "}
                 <li className={styles.subItem}>
-                  <NavLink to={item.subItem.rota} className={styles.menuLink}>
+                  <HashLink
+                    to={item.subItem.rota}
+                    className={styles.menuLink}
+                    smooth={item.subItem.rota.startsWith("#")}
+                  >
                     {item.subItem.texto}
-                  </NavLink>
+                  </HashLink>
                 </li>
               </ul>
             )}

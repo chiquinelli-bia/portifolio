@@ -36,14 +36,7 @@ export const Menu = () => {
   }, [location.pathname, openSubmenu]);
   return (
     <header>
-      <nav
-        id={styles.accordian}
-        data-theme={temaAtual.tema}
-        style={{
-          "--selector-active-bg": temaAtual.sectionBg,
-        }}
-        ref={refAccordian}
-      >
+      <nav id={styles.accordian} data-theme={temaAtual.tema} ref={refAccordian}>
         <ButtonLink
           data-menu-laco
           className={temaAtual.tema === "amarelo" ? "primary" : "secondary"}
