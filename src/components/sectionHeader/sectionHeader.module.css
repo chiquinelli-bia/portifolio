@@ -1,3 +1,8 @@
-.sectionHeading {
-  padding-left: 68px;
+.container {
+  width: fit-content;
+  text-align: center;
+}
+
+.container > h2[data-brand="yellow"] {
+  color: var(--color-brand-beige-100);
 }

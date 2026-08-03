@@ -1,7 +1,7 @@
 import { useId } from "react";
 import styles from "./ornament.module.css";
 
-const Ornament = ({ brand = "", className = "", ...props }) => {
+const Ornament = ({ brand, className = "", ...props }) => {
   const gradientId = useId();
 
   return (
@@ -13,7 +13,8 @@ const Ornament = ({ brand = "", className = "", ...props }) => {
       {...props}
       aria-hidden="true"
       focusable="false"
-      className={`${styles.ornament} ${styles[`brand-${brand}`]} ${className}`}
+      className={`${styles.ornament} ${className}`}
+      data-brand={brand}
     >
       <path
         d="M416.433 10.1471C417.152 11.0039 415.751 9.32782 416.433 10.1471C416.433 10.1471 418.587 10.5798 419.812 11.346C420.521 11.7891 421.037 12.1121 422.261 12.8783C423.485 13.6445 424.668 15.9166 424.668 15.9166C424.584 16.0191 424.639 18.0331 424.602 18.1756C421.805 28.6918 408.176 23.1312 406.645 20.3041C405.115 17.477 404.632 17.2188 404.161 14.0151L406.19 16.2396C409.75 26.8305 427.661 23.0886 418.565 11.333C417.683 10.1931 416.433 10.1471 416.433 10.1471Z"

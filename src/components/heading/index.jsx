@@ -3,6 +3,11 @@ export const Heading = ({
   variant = "xxl",
   children,
   className = "",
+  ...props
 }) => {
-  return <Tag className={`${className} heading-${variant}`}>{children}</Tag>;
+  return (
+    <Tag className={`${className} heading-${variant}`} {...props}>
+      {children}
+    </Tag>
+  );
 };

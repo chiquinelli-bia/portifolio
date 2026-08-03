@@ -4,11 +4,11 @@ import Ornament from "@/components/ornament";
 
 export const SectionHeader = ({ title, brand = "blue" }) => {
   return (
-    <>
-      <Heading as="h2" variant="xl" className={styles.sectionHeading}>
+    <div className={styles.container}>
+      <Heading as="h2" variant="xl" data-brand={brand}>
         {title}
       </Heading>
       <Ornament brand={brand} />
-    </>
+    </div>
   );
 };
