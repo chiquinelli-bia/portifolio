@@ -44,10 +44,10 @@ export const Info = () => {
           </ul>
           <div className={styles.containerButton}>
             <div>
-              <ButtonLink path={currentProject.links.repository}>
+              <ButtonLink path={currentProject.links.demo}>
                 Ver Projeto
               </ButtonLink>
-              <ButtonLink path={currentProject.links.demo}>
+              <ButtonLink path={currentProject.links.repository}>
                 Ver Código
               </ButtonLink>
             </div>

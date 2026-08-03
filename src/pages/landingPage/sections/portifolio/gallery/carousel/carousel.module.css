@@ -1,10 +1,9 @@
 .carousel {
   display: flex;
   flex-direction: column;
-  flex: 1;
   backface-visibility: hidden;
-  will-change: transform;
-  align-items: center;
+  flex: 1;
+  justify-content: center;
 }
 .container {
   display: flex;
