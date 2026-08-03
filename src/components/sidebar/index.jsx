@@ -48,7 +48,9 @@ export const Menu = () => {
       >
         <ButtonLink
           data-menu-laco
-          className={temaAtual?.theme === "quemSou" ? "primary" : "secondary"}
+          className={
+            ["contato"].includes(temaAtual?.theme) ? "primary" : "secondary"
+          }
         >
           Fale Comigo
         </ButtonLink>
