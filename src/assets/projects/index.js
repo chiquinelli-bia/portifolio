@@ -9,7 +9,7 @@ import CodeConnect01 from "./gallery/codeConnect/01.webp.png";
 import CodeConnect02 from "./gallery/codeConnect/02.webp.png";
 import memoteca01 from "./gallery/memoteca/01.webp.png";
 import memoteca02 from "./gallery/memoteca/02.webp.png";
-import aluraBooks01 from "./gallery/AluraBooks/01.webp.png";
+import aluraBooks01 from "./gallery/aluraBooks/01.webp.png";
 
 export {
   fokusCover,

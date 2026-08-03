@@ -1,4 +1,4 @@
-import { ButtonLink } from "@/components/button/buttonLInk";
+import { ButtonLink } from "@/components/button/buttonLink";
 import Navigation from "./navigationList";
 import styles from "./sidebar.module.css";
 import { itensNav } from "./navItens";
