@@ -2,6 +2,8 @@ import { useLocation } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import styles from "./navigation.module.css";
 import { IoIosArrowDown } from "react-icons/io";
+import { useActiveSection } from "@/hooks/useActiveSection";
+
 const NavigationList = ({
   itens,
   activeItemRef,
@@ -9,23 +11,27 @@ const NavigationList = ({
   setOpenSubmenu,
 }) => {
   const location = useLocation();
+  const activeSection = useActiveSection();
 
   return (
     <ul className={`${styles.showDropdown} ${styles.menu}`}>
       {itens.map((item) => {
         const Icon = item.icon;
-        const isCurrentPage = location.hash === item.rota;
-        const isActive = isCurrentPage || location.hash === item.subItem?.rota;
+        const isCurrentPage = location.pathname === item.rota.split("#")[0];
+        const isActive = isCurrentPage
+          ? activeSection === item.rota.split("#")[1]
+          : "";
         const isOpen = openSubmenu === item.id || isActive;
+
         return (
           <li key={item.id} className={styles.menuItem}>
             <div
               className={styles.menuHeader}
-              ref={isCurrentPage ? activeItemRef : null}
+              ref={isActive ? activeItemRef : null}
             >
               <HashLink
                 to={item.rota}
-                smooth={item.rota.startsWith("#")}
+                smooth={item.rota.startsWith("/#")}
                 className={`${styles.menuLink} ${isActive ? styles.active : ""}`}
               >
                 <Icon size={30} aria-hidden="true" />
@@ -53,7 +59,7 @@ const NavigationList = ({
                   <HashLink
                     to={item.subItem.rota}
                     className={styles.menuLink}
-                    smooth={item.subItem.rota.startsWith("#")}
+                    smooth={item.subItem.rota.startsWith("/#")}
                   >
                     {item.subItem.texto}
                   </HashLink>

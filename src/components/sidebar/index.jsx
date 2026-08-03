@@ -4,9 +4,8 @@ import styles from "./sidebar.module.css";
 import { itensNav } from "./navItens";
 import { useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { temas } from "./navThemes";
-
-const temaAtual = temas.hero;
+import { useActiveSection } from "@/hooks/useActiveSection";
+import { sections } from "@/data/navThemes";
 
 export const Menu = () => {
   const [openSubmenu, setOpenSubmenu] = useState(null);
@@ -14,6 +13,11 @@ export const Menu = () => {
   const refAccordian = useRef(null);
   const activeItemRef = useRef(null);
   const location = useLocation();
+  const activeSection = useActiveSection();
+
+  const temaAtual =
+    sections.find((section) => section.id === activeSection) ?? sections[0];
+
   useEffect(() => {
     const calculatePosition = () => {
       if (!activeItemRef.current || !refAccordian.current) return;
@@ -34,12 +38,17 @@ export const Menu = () => {
       el.removeEventListener("transitionend", calculatePosition);
     };
   }, [location.pathname, openSubmenu]);
+
   return (
     <header>
-      <nav id={styles.accordian} data-theme={temaAtual.tema} ref={refAccordian}>
+      <nav
+        id={styles.accordian}
+        data-theme={temaAtual?.theme}
+        ref={refAccordian}
+      >
         <ButtonLink
           data-menu-laco
-          className={temaAtual.tema === "amarelo" ? "primary" : "secondary"}
+          className={temaAtual?.theme === "quemSou" ? "primary" : "secondary"}
         >
           Fale Comigo
         </ButtonLink>

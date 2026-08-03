@@ -1,4 +1,4 @@
-#accordian[data-theme="azul"] {
+#accordian[data-theme="inicio"] {
   --nav-bg: var(--color-brand-blue-400);
   --nav-text: var(--color-brand-beige-100);
   --nav-text-hover: var(--color-brand-yellow-100);
@@ -6,7 +6,15 @@
   --nav-subitem-bg: var(--color-brand-blue-500);
   --selector-active-bg: var(--color-brand-beige-400);
 }
-#accordian[data-theme="beige"] {
+#accordian[data-theme="portifolio"] {
+  --nav-bg: var(--color-brand-blue-400);
+  --nav-text: var(--color-brand-beige-100);
+  --nav-text-hover: var(--color-brand-yellow-100);
+  --nav-active-text: var(--color-brand-blue-600);
+  --nav-subitem-bg: var(--color-brand-blue-500);
+  --selector-active-bg: var(--color-brand-yellow-200);
+}
+#accordian[data-theme="quemSou"] {
   --nav-bg: var(--color-brand-beige-300);
   --nav-text: var(--color-nav-text);
   --nav-text-hover: var(--color-brand-blue-500);
@@ -14,7 +22,7 @@
   --nav-subitem-bg: var(--color-brand-beige-500);
   --selector-active-bg: var(--color-brand-blue-500);
 }
-#accordian[data-theme="amarelo"] {
+#accordian[data-theme="contato"] {
   --nav-bg: var(--color-brand-yellow-200);
   --nav-text: var(--color-nav-text);
   --nav-text-hover: var(--color-brand-blue-500);

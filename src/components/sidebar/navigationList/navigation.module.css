@@ -37,8 +37,7 @@
   gap: 0.6rem;
   text-decoration: none;
   font-size: 1.8rem;
-  /* transition-duration: 0.6s;
-  transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55); */
+
   transition: color 0.3s ease;
   position: relative;
 }
@@ -49,10 +48,6 @@
 .active + button {
   transform: rotate(180deg);
 }
-/* .menu > ul > li.active > a {
-  background-color: transparent;
-  transition: all 0.7s;
-} */
 
 .menuItem:hover {
   color: var(--nav-text-hover);

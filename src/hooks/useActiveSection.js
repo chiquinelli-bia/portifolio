@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 export function useActiveSection() {
-  const [activeSection, setActiveSection] = useState("");
+  const [activeSection, setActiveSection] = useState([0]);
 
   useEffect(() => {
     const sections = document.querySelectorAll("section");
