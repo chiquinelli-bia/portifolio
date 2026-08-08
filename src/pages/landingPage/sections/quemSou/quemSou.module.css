@@ -1,3 +1,28 @@
 .container {
   background: var(--color-brand-blue-500);
+  display: flex;
+  align-items: stretch;
+  gap: 3.6rem;
+  height: 100vh;
+}
+.sectionDecoration {
+  background-image: url("@/assets/pole.png"), url("@/assets/letter.png");
+  min-height: 100vh;
+
+  background-repeat: no-repeat, no-repeat;
+
+  margin-right: 2.4rem;
+
+  background-position:
+    100% 10%,
+    90% 41%;
+  background-size:
+    32% auto,
+    62% auto;
+}
+
+.containerContent {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
