@@ -21,8 +21,25 @@
     62% auto;
 }
 
-.containerContent {
+.sectionContent {
   display: flex;
   flex-direction: column;
+  margin: 3.2rem 0;
   flex: 1;
+  color: var(--color-brand-beige-100);
+}
+.introduction {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+.textoDestaque {
+  background: linear-gradient(
+    90deg,
+    var(--color-brand-yellow-600),
+    var(--color-brand-yellow-100)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
 }

@@ -120,6 +120,9 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
+p {
+  font-size: var(--font-size-body-lg);
+}
 main {
   display: flex;
 }
