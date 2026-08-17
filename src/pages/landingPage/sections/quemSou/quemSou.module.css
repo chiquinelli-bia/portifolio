@@ -24,6 +24,7 @@
 .sectionContent {
   display: flex;
   flex-direction: column;
+  gap: 2.8rem;
   margin: 3.2rem 0;
   flex: 1;
   color: var(--color-brand-beige-100);
@@ -36,7 +37,7 @@
 .textoDestaque {
   background: linear-gradient(
     90deg,
-    var(--color-brand-yellow-600),
+    var(--color-brand-yellow-500),
     var(--color-brand-yellow-100)
   );
   background-clip: text;

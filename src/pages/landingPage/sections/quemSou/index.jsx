@@ -2,6 +2,8 @@ import { SectionHeader } from "@/components/sectionHeader";
 import styles from "./quemSou.module.css";
 import { sections } from "@/data/navThemes";
 import { Heading } from "@/components/heading";
+import { Tabs } from "./tabs";
+import { ButtonLink } from "@/components/button/buttonLink";
 
 export const QuemSou = () => {
   return (
@@ -28,6 +30,10 @@ export const QuemSou = () => {
             </span>
           </p>
         </div>
+        <Tabs />
+        <ButtonLink className="secondary">
+          Gostou do que viu? Vamos conversar.
+        </ButtonLink>
       </div>
     </section>
   );
