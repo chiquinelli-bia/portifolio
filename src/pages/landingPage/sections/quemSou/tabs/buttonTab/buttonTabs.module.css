@@ -1,0 +1,157 @@
+.containerButton {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.buttonTabs {
+  position: relative;
+  width: fit-content;
+  margin-top: 2rem;
+  padding: 0.4rem 1.6rem;
+
+  font-size: var(--font-size-button-xxl);
+  color: var(--color-brand-beige-100);
+
+  border: 0.1rem solid transparent;
+  border-bottom: none;
+  border-radius: 0.8rem 0.8rem 0 0;
+
+  box-shadow: var(--shadow-default-tab-button);
+
+  transition:
+    box-shadow 0.25s ease,
+    border-color 0.25s ease,
+    background-color 0.25s ease,
+    margin-top 0.25s ease;
+}
+
+/* Elemento decorativo do button tab */
+
+.buttonTabs::after {
+  content: "";
+  position: absolute;
+  right: -1.1rem;
+  bottom: 0;
+
+  width: 2rem;
+  height: 4.3rem;
+
+  border-radius: 0.3rem 100% 0 0;
+
+  background: inherit;
+  box-shadow: var(--shadow-default-edge-tab-button);
+
+  pointer-events: none;
+
+  transition:
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+/* Estados de interação */
+
+.buttonTabs:hover {
+  box-shadow: var(--shadow-hover-tab-button);
+}
+
+.buttonTabs:hover::after {
+  box-shadow: var(--shadow-hover-edge-tab-button);
+}
+
+.buttonTabs:active {
+  box-shadow: var(--shadow-pressed-tab-button);
+}
+
+.buttonTabs:active::after {
+  box-shadow: var(--shadow-pressed-edge-tab-button);
+}
+
+.buttonTabs:focus-visible {
+  background-color: var(--color-brand-blue-100);
+  outline: 0.3rem solid var(--color-brand-yellow-200);
+  outline-offset: 0.2rem;
+}
+
+.buttonTabActive {
+  margin-top: 0;
+
+  border-color: var(--color-brand-yellow-500);
+  box-shadow: var(--shadow-active-tab-button);
+}
+
+.buttonTabActive::after {
+  border-color: inherit;
+  border-style: solid;
+  border-width: 0.1rem 0.1rem 0 0;
+  box-shadow: var(--shadow-active-edge-tab-button);
+}
+
+.competenciasButton {
+  z-index: 1;
+  background-color: var(--color-brand-blue-200);
+}
+
+.valoresButton {
+  background-color: var(--color-brand-blue-100);
+}
+
+.valoresButton:focus-visible {
+  background-color: #6a92be;
+}
+
+.txtTabActive {
+  background: linear-gradient(
+    90deg,
+    var(--color-brand-yellow-400),
+    var(--color-brand-yellow-200)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.tabsDivider {
+  position: absolute;
+  top: 100%;
+  z-index: 2;
+
+  width: 54.4rem;
+  height: 2rem;
+
+  background-color: var(--color-brand-blue-200);
+  border: 0.1rem solid var(--color-brand-yellow-300);
+  border-radius: 0 0.4rem 0 0;
+
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.tabsDivider::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  right: 0;
+  width: 40.5%;
+  height: 2px;
+  background-color: inherit;
+}
+
+.competenciasTabsDivider {
+  left: 0;
+}
+
+.competenciasTabsDivider::before {
+  left: 0;
+  width: 38%;
+}
+
+.valoresTabsDivider {
+  left: -20rem;
+  background-color: var(--color-brand-blue-100);
+}
+
+.valoresTabsDivider::before {
+  left: 38.5%;
+}
