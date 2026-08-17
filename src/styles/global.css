@@ -89,9 +89,20 @@
   --font-weight-nav-item-active: 700;
 
   /* === Elevations === */
+  /* Surface */
   --shadow-depth-surface-dark: 0 0.8rem 1rem #00000033;
   --shadow-depth-surface-yellow: 0 0.8rem 1rem #a3873133;
   --shadow-highlight-surface-yellow: 0 0.8rem 2rem rgba(163, 135, 49, 0.35);
+  /* Tab button */
+  --shadow-default-tab-button: -3px -3px 8px 0px #00000033;
+  --shadow-hover-tab-button: -3px -5px 6px 0px #a387311a;
+  --shadow-pressed-tab-button: 0px 3px 4px 0px #00000021 inset;
+  --shadow-active-tab-button: -7px -4px 10px 0px #a3873145;
+  /* Tab button Edge*/
+  --shadow-default-edge-tab-button: 4px 0px 3px 0px #00000066;
+  --shadow-hover-edge-tab-button: 3px -5px 6px 0 #a387311a;
+  --shadow-pressed-edge-tab-button: -3px 3px 4px 0 #00000021 inset;
+  --shadow-active-edge-tab-button: 4px -4px 10px 0 #a3873145;
 }
 /* =========================================================
    RESET
@@ -202,4 +213,15 @@ ol {
   font-size: var(--font-size-heading-sm);
   line-height: var(--line-height-heading-sm);
   font-family: var(--font-family-heading);
+}
+/* Acessibilidade: respeita preferência do usuário por menos movimento */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
 }
