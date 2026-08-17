@@ -12,7 +12,8 @@
     background-color 0.3s,
     border-color 0.3s,
     color 0.3s,
-    transform 0.2s;
+    transform 0.2s,
+    filter 0.2s;
 }
 .tag img {
   width: 2rem;
