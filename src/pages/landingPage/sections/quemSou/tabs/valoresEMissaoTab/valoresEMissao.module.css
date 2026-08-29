@@ -1,0 +1,14 @@
+.container {
+  width: 100%;
+  padding: 2rem;
+  padding-top: 3rem;
+  background: linear-gradient(
+    180deg,
+    var(--color-brand-blue-100) 22.83%,
+    var(--color-brand-blue-300) 100%
+  );
+}
+.containerValores {
+}
+.containerMissao {
+}
