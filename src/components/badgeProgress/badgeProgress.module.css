@@ -1,0 +1,43 @@
+.container {
+  max-width: 12rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.badge {
+  width: 90px;
+  height: 90px;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: transform 0.2s;
+}
+.badge:hover {
+  transform: scale(1.03);
+}
+
+.badgeBackground {
+  width: 100%;
+  height: 100%;
+
+  position: absolute;
+  inset: 0;
+  filter: drop-shadow(var(--shadow-highlight-badge));
+}
+
+.technology {
+  width: 100%;
+  height: 60%;
+
+  position: relative;
+  z-index: 1;
+
+  object-fit: contain;
+  filter: drop-shadow(var(--shadow-highlight-technology));
+}
