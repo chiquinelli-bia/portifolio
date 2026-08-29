@@ -1,4 +1,16 @@
 .tabs {
   display: flex;
+  flex-direction: column;
+  width: 54.4rem;
+  margin: 0 auto;
+}
+
+.containerTabs {
+  display: flex;
   align-items: center;
+  margin-right: 12rem;
+}
+
+.containerTabPanels {
+  width: 100%;
 }
