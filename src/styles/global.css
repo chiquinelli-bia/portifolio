@@ -103,6 +103,9 @@
   --shadow-hover-edge-tab-button: 3px -5px 6px 0 #a387311a;
   --shadow-pressed-edge-tab-button: -3px 3px 4px 0 #00000021 inset;
   --shadow-active-edge-tab-button: 4px -4px 10px 0 #a3873145;
+  /* Badge Progress*/
+  --shadow-highlight-badge: 0px 1px 4px #f2d98a;
+  --shadow-highlight-technology: 0px 8px 20px #07142266;
 }
 /* =========================================================
    RESET
