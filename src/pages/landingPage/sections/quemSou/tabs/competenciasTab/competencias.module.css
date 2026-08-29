@@ -1,0 +1,13 @@
+.container {
+  width: 100%;
+  padding: 2rem;
+  background: linear-gradient(
+    180deg,
+    var(--color-brand-blue-200) 22.83%,
+    var(--color-brand-blue-400) 100%
+  );
+}
+.containerHabilidades {
+}
+.containerDisponibilidade {
+}
