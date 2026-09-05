@@ -1,5 +1,8 @@
-import styles from "./competencias.module.css";
+import { BadgeProgress } from "@/components/badgeProgress";
 import { Heading } from "@/components/heading";
+import { technologies } from "@/data/technologies";
+
+import styles from "./competencias.module.css";
 
 export const Competencias = () => {
   return (
@@ -8,11 +11,20 @@ export const Competencias = () => {
       aria-labelledby="competencias-tab"
       className={styles.container}
     >
-      <div className={styles.containerHabilidades}>
+      <div>
         <Heading as="h4" variant="sm">
           Habilidades que utilizo no dia a dia
         </Heading>
+        <div className={styles.containerTechnologies}>
+          {technologies.map((technology) => (
+            <BadgeProgress
+              key={technology.id ?? technology.name}
+              technology={technology}
+            />
+          ))}
+        </div>
       </div>
+
       <div className={styles.containerDisponibilidades}>
         <Heading as="h4" variant="sm">
           Disponibilidade e contratos

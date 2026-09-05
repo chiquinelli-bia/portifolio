@@ -1,13 +1,27 @@
 .container {
   width: 100%;
-  padding: 2rem;
+  padding: 2.8rem 2rem 2rem;
   background: linear-gradient(
     180deg,
     var(--color-brand-blue-200) 22.83%,
     var(--color-brand-blue-400) 100%
   );
+  border-radius: 0 0 0.8rem 0.8rem;
+  border: 0.1rem solid var(--color-brand-yellow-500);
+  border-top: none;
+  box-shadow: var(--shadow-highlight-surface-blue);
 }
-.containerHabilidades {
+
+.containerTechnologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.6rem;
+  justify-content: center;
+  padding: 1.4rem 0;
 }
-.containerDisponibilidade {
+
+.containerDisponibilidades {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
 }
