@@ -93,6 +93,8 @@
   --shadow-depth-surface-dark: 0 0.8rem 1rem #00000033;
   --shadow-depth-surface-yellow: 0 0.8rem 1rem #a3873133;
   --shadow-highlight-surface-yellow: 0 0.8rem 2rem rgba(163, 135, 49, 0.35);
+  --shadow-highlight-surface-blue: 0px 8px 20px 0px #07142266;
+
   /* Tab button */
   --shadow-default-tab-button: -3px -3px 8px 0px #00000033;
   --shadow-hover-tab-button: -3px -5px 6px 0px #a387311a;
