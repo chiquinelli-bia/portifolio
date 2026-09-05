@@ -1,4 +1,14 @@
 .progressBar {
-  width: max-content;
-  height: max-content;
+  width: 100%;
+  max-width: 110px;
+  height: auto;
+  display: block;
+}
+
+.bar {
+  filter: drop-shadow(var(--shadow-highlight-progress));
+}
+
+.sparkle {
+  filter: drop-shadow(var(--shadow-highlight-badge));
 }
