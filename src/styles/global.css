@@ -92,24 +92,26 @@
   /* Surface */
   --shadow-depth-surface-dark: 0 0.8rem 1rem #00000033;
   --shadow-depth-surface-yellow: 0 0.8rem 1rem #a3873133;
+  --shadow-depth-surface-blue: 0 0.8rem 1rem #07142266;
   --shadow-highlight-surface-yellow: 0 0.8rem 2rem rgba(163, 135, 49, 0.35);
-  --shadow-highlight-surface-blue: 0px 8px 20px 0px #07142266;
+  --shadow-highlight-surface-blue: 0 0.8rem 2rem 0 #07142266;
 
   /* Tab button */
-  --shadow-default-tab-button: -3px -3px 8px 0px #00000033;
-  --shadow-hover-tab-button: -3px -5px 6px 0px #a387311a;
-  --shadow-pressed-tab-button: 0px 3px 4px 0px #00000021 inset;
-  --shadow-active-tab-button: -7px -4px 10px 0px #a3873145;
-  /* Tab button Edge*/
-  --shadow-default-edge-tab-button: 4px 0px 3px 0px #00000066;
-  --shadow-hover-edge-tab-button: 3px -5px 6px 0 #a387311a;
-  --shadow-pressed-edge-tab-button: -3px 3px 4px 0 #00000021 inset;
-  --shadow-active-edge-tab-button: 4px -4px 10px 0 #a3873145;
-  /* Badge Progress*/
+  --shadow-default-tab-button: -0.3rem -0.3rem 0.8rem 0 #00000033;
+  --shadow-hover-tab-button: -0.3rem -0.5rem 0.6rem 0 #a387311a;
+  --shadow-pressed-tab-button: 0 0.3rem 0.4rem 0 #00000021 inset;
+  --shadow-active-tab-button: -0.7rem -0.4rem 1rem 0 #a3873145;
+
+  /* Tab button Edge */
+  --shadow-default-edge-tab-button: 0.4rem 0 0.3rem 0 #00000066;
+  --shadow-hover-edge-tab-button: 0.3rem -0.5rem 0.6rem 0 #a387311a;
+  --shadow-pressed-edge-tab-button: -0.3rem 0.3rem 0.4rem 0 #00000021 inset;
+  --shadow-active-edge-tab-button: 0.4rem -0.4rem 1rem 0 #a3873145;
+
   /* Badge Progress */
-  --shadow-highlight-badge: 0px 1px 4px #f2d98a;
-  --shadow-highlight-progress: 0px 1px 3px rgba(242, 217, 138, 0.7);
-  --shadow-highlight-technology: 0px 8px 20px #07142266;
+  --shadow-highlight-badge: 0 0.1rem 0.4rem #f2d98a;
+  --shadow-highlight-progress: 0 0.1rem 0.3rem rgba(242, 217, 138, 0.7);
+  --shadow-highlight-technology: 0 0.8rem 2rem #07142266;
 }
 /* =========================================================
    RESET
