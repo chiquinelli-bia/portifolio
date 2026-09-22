@@ -27,6 +27,21 @@
   --color-brand-beige-600: #b1a286;
   --color-brand-beige-700: #918266;
 
+  /* === Gray Scale === */
+
+  --color-grays-scale-0: #fff;
+  --color-grays-scale-50: #f6f6f6;
+  --color-grays-scale-100: #e7e7e7;
+  --color-grays-scale-200: #d1d1d1;
+  --color-grays-scale-300: #b0b0b0;
+  --color-grays-scale-400: #888888;
+  --color-grays-scale-500: #6d6d6d;
+  --color-grays-scale-600: #5d5d5d;
+  --color-grays-scale-700: #4f4f4f;
+  --color-grays-scale-800: #454545;
+  --color-grays-scale-900: #3d3d3d;
+  --color-grays-scale-950: #262626;
+  --color-grays-scale-1000: #000000;
   /* === Navigation === */
 
   --color-nav-text: #0c1522;
