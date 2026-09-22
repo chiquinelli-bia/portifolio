@@ -1,0 +1,72 @@
+.popoverBanner {
+  position: absolute;
+  position-area: inline-start;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+
+  /* Animações de entrada e saída */
+  opacity: 0;
+  scale: 0.95;
+  transition:
+    opacity 0.25s ease-out,
+    scale 0.25s ease-out,
+    overlay 0.25s allow-discrete,
+    display 0.25s allow-discrete;
+}
+
+/* Estado Aberto */
+.popoverBanner:popover-open {
+  opacity: 1;
+  scale: 1;
+}
+
+@starting-style {
+  .popoverBanner:popover-open {
+    opacity: 0;
+    scale: 0.95;
+  }
+}
+
+.wrapperContent {
+  display: flex;
+  filter: drop-shadow(var(--shadow-depth-surface-blue));
+}
+
+.conteudoBanner {
+  box-sizing: border-box;
+  width: max-content;
+  max-width: 339px;
+  min-height: 54px;
+  background-color: var(--color-brand-beige-100);
+  border-top: 2px solid var(--color-brand-beige-500);
+  border-bottom: 2px solid var(--color-brand-beige-500);
+  box-shadow:
+    inset 0 3px 0 0 var(--color-brand-blue-100),
+    inset 0 -3px 0 0 var(--color-brand-blue-100);
+}
+
+.textoBanner {
+  margin: 0;
+  padding: 4px;
+  font-size: var(--font-size-body-sm);
+  font-weight: 500;
+  line-height: 1.35;
+  color: var(--color-brand-blue-700);
+  text-align: center;
+}
+
+.conteudoBanner:hover .textoBanner {
+  background-image: linear-gradient(
+    90deg,
+    #c6a749 0%,
+    #9f8a42 19.24%,
+    #5e5937 39.43%,
+    #242d2c 63.47%,
+    #001226 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
