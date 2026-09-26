@@ -8,9 +8,8 @@
   position: relative;
   width: fit-content;
   margin-top: 2rem;
-  padding: 0.4rem 1.6rem;
+  padding: 0.8rem 1.6rem;
 
-  font-size: var(--font-size-button-xxl);
   color: var(--color-brand-beige-100);
 
   border: 0.1rem solid transparent;
@@ -35,7 +34,7 @@
   bottom: 0;
 
   width: 2rem;
-  height: 4.3rem;
+  height: 4.2rem;
 
   border-radius: 0.3rem 100% 0 0;
 
@@ -116,7 +115,7 @@
   top: 100%;
   z-index: 2;
 
-  width: 54.4rem;
+  width: 65rem;
   height: 2rem;
 
   background-color: var(--color-brand-blue-200);
@@ -133,7 +132,7 @@
   position: absolute;
   top: -1px;
   right: 0;
-  width: 40.5%;
+  width: 214px;
   height: 2px;
   background-color: inherit;
 }
@@ -144,14 +143,14 @@
 
 .competenciasTabsDivider::before {
   left: 0;
-  width: 38%;
+  width: 200px;
 }
 
 .valoresTabsDivider {
-  left: -20rem;
+  left: -19.2rem;
   background-color: var(--color-brand-blue-100);
 }
 
 .valoresTabsDivider::before {
-  left: 38.5%;
+  left: 31%;
 }

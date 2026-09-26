@@ -3,37 +3,45 @@
   display: flex;
   align-items: stretch;
   gap: 3.6rem;
-  height: 100vh;
+  padding: 4rem;
 }
+
+.sectionVisual {
+  display: flex;
+  flex-direction: column;
+}
+
 .sectionDecoration {
   background-image: url("@/assets/pole.png"), url("@/assets/letter.png");
-  min-height: 100vh;
+  flex: 1;
+  min-height: auto;
 
   background-repeat: no-repeat, no-repeat;
-
   margin-right: 2.4rem;
 
   background-position:
-    100% 10%,
-    90% 41%;
+    100% 52%,
+    90% 69%;
   background-size:
-    32% auto,
-    62% auto;
+    42% auto,
+    74% auto;
 }
 
 .sectionContent {
   display: flex;
   flex-direction: column;
   gap: 2.8rem;
-  margin: 3.2rem 0;
+  margin: 0.5rem 0;
   flex: 1;
   color: var(--color-brand-beige-100);
 }
+
 .introduction {
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
 }
+
 .textoDestaque {
   background: linear-gradient(
     90deg,
