@@ -1,4 +1,5 @@
 import styles from "./buttonTabs.module.css";
+import { Heading } from "@/components/heading";
 
 export const ButtonTab = ({ activeTab, aba, setActiveTab, label }) => {
   const isActive = activeTab === aba;
@@ -15,7 +16,13 @@ export const ButtonTab = ({ activeTab, aba, setActiveTab, label }) => {
         aria-selected={isActive}
         onClick={() => setActiveTab(aba)}
       >
-        <span className={isActive ? styles.txtTabActive : ""}>{label}</span>
+        <Heading
+          as="h3"
+          variant="md"
+          className={isActive ? styles.txtTabActive : ""}
+        >
+          {label}
+        </Heading>
       </button>
 
       {isActive && (
