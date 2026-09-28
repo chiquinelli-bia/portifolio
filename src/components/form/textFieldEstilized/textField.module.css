@@ -1,0 +1,62 @@
+/* Base compartilhada */
+.customTextField {
+  background: var(--color-brand-beige-100);
+  border-radius: 10px;
+  box-shadow: var(--shadow-depth-surface-blue);
+  padding: 0;
+}
+
+/* Container do Filled e Bordas */
+.customTextField :global(.MuiFilledInput-root) {
+  background-color: transparent !important;
+  border-radius: 10px;
+  border: 2px solid var(--color-brand-beige-300);
+  transition: border-color 0.2s ease-in-out;
+}
+
+.customTextField :global(.MuiFilledInput-root):before,
+.customTextField :global(.MuiFilledInput-root):after {
+  display: none !important;
+}
+
+.customTextField :global(.MuiFilledInput-root):hover {
+  border-color: var(--color-brand-beige-500);
+}
+
+.customTextField :global(.MuiFilledInput-root):global(.Mui-focused) {
+  border-color: var(--color-brand-blue-100);
+}
+
+/* Rótulo e Animação */
+.customTextField :global(.MuiInputLabel-root) {
+  font-size: var(--font-size-body-sm);
+  color: var(--color-grays-scale-700);
+}
+
+.customTextField :global(.MuiInputLabel-root):global(.Mui-focused),
+.customTextField :global(.MuiInputLabel-root.MuiInputLabel-shrink) {
+  font-size: var(--font-size-body-lg);
+  color: var(--color-brand-beige-100);
+  font-weight: 600;
+  transform: translate(10px, -20px) scale(0.85);
+}
+
+/* Texto */
+.customTextField :global(.MuiInputBase-input) {
+  color: var(--color-grays-scale-1000);
+  font-size: var(--font-size-body-sm);
+}
+
+/* Inputs de 1 linha */
+.customInput :global(.MuiInputBase-root) > input {
+  padding: 14px 16px;
+  height: auto;
+  display: flex;
+  align-items: center;
+}
+
+/* Textarea */
+.customTextArea :global(.MuiFilledInput-root) {
+  padding: 14px 16px;
+  height: 165px;
+}
