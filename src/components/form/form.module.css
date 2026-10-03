@@ -1,0 +1,10 @@
+.containerForm {
+  background-color: var(--color-brand-blue-600);
+  border-radius: 0.8rem;
+  padding: 2.4rem 2rem;
+  width: 55rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+  padding-top: 3.5rem;
+}

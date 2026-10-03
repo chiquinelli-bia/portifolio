@@ -1,7 +1,9 @@
 import { useState } from "react";
 import styles from "./form.module.css";
 import { Box } from "@mui/material";
+import { Button } from "../button";
 import { TextFieldEstilized } from "./textFieldEstilized";
+import { BsSend } from "react-icons/bs";
 
 export const FormularioContato = () => {
   const [formData, setFormData] = useState({
@@ -55,9 +57,9 @@ export const FormularioContato = () => {
       <Box
         sx={{ display: "flex", justifyContent: "flex-end", marginTop: "8px" }}
       >
-        {/* <Button type="submit" variant="contained">
-          Enviar
-        </Button> */}
+        <Button className="secondary">
+          Enviar Carta <BsSend size={25} />
+        </Button>
       </Box>
     </Box>
   );
