@@ -1,62 +1,73 @@
 /* Base compartilhada */
 .customTextField {
   background: var(--color-brand-beige-100);
-  border-radius: 10px;
+  border-radius: 1rem;
   box-shadow: var(--shadow-depth-surface-blue);
-  padding: 0;
 }
 
 /* Container do Filled e Bordas */
 .customTextField :global(.MuiFilledInput-root) {
-  background-color: transparent !important;
-  border-radius: 10px;
-  border: 2px solid var(--color-brand-beige-300);
+  background-color: transparent;
+  border-radius: 1rem;
+  border: 0.2rem solid var(--color-brand-beige-300);
   transition: border-color 0.2s ease-in-out;
+  padding: 0;
+}
+.customTextField :global(.MuiInputBase-input),
+.customTextField :global(.MuiInputLabel-root) {
+  font-family: var(--font-family-body);
 }
 
 .customTextField :global(.MuiFilledInput-root):before,
 .customTextField :global(.MuiFilledInput-root):after {
-  display: none !important;
+  display: none;
 }
 
 .customTextField :global(.MuiFilledInput-root):hover {
   border-color: var(--color-brand-beige-500);
 }
 
-.customTextField :global(.MuiFilledInput-root):global(.Mui-focused) {
+.customTextField :global(.MuiFilledInput-root.Mui-focused) {
   border-color: var(--color-brand-blue-100);
 }
 
-/* Rótulo e Animação */
+/* Rótulo */
 .customTextField :global(.MuiInputLabel-root) {
-  font-size: var(--font-size-body-sm);
-  color: var(--color-grays-scale-700);
-}
-
-.customTextField :global(.MuiInputLabel-root):global(.Mui-focused),
-.customTextField :global(.MuiInputLabel-root.MuiInputLabel-shrink) {
   font-size: var(--font-size-body-lg);
-  color: var(--color-brand-beige-100);
-  font-weight: 600;
-  transform: translate(10px, -20px) scale(0.85);
+  padding: 0;
+  color: var(--color-grays-scale-700);
+  transition:
+    color 0.2s ease-in-out,
+    transform 0.2s ease-in-out;
 }
 
-/* Texto */
+/* Estado ativo/encolhido do Rótulo */
+.customTextField :global(.MuiInputLabel-root.Mui-focused),
+.customTextField :global(.MuiInputLabel-root.MuiInputLabel-shrink) {
+  color: var(--color-brand-blue-100);
+  font-weight: 600;
+}
+.customTextField :global(.MuiInputLabel-root) :global(.Mui-focused),
+.customTextField :global(.MuiInputLabel-root.MuiInputLabel-shrink) {
+  transform: translate(1rem, -2rem) scale(0.85);
+}
+/* Texto de entrada */
 .customTextField :global(.MuiInputBase-input) {
   color: var(--color-grays-scale-1000);
-  font-size: var(--font-size-body-sm);
+  font-size: var(--font-size-body-md);
 }
 
 /* Inputs de 1 linha */
-.customInput :global(.MuiInputBase-root) > input {
-  padding: 14px 16px;
+.customInput :global(.MuiInputBase-root) input {
+  padding: 1.4rem 1.6rem;
   height: auto;
   display: flex;
   align-items: center;
 }
 
 /* Textarea */
+.customTextArea :global(.MuiFilledInput-root) input,
 .customTextArea :global(.MuiFilledInput-root) {
-  padding: 14px 16px;
-  height: 165px;
+  padding: 1.4rem 1.6rem !important;
+  height: stretch;
 }

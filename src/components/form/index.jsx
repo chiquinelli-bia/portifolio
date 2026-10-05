@@ -46,7 +46,7 @@ export const FormularioContato = () => {
 
       <TextFieldEstilized
         multiline
-        rows={6}
+        rows={8}
         label="Escreva sua carta"
         placeholder="Escreva sua carta"
         value={formData.mensagem}
