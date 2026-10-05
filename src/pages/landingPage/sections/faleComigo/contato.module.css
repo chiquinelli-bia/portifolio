@@ -1,3 +1,18 @@
 .container {
   background: var(--color-brand-beige-100);
+  background: linear-gradient(
+    to right,
+    var(--color-brand-beige-100) 0%,
+    var(--color-brand-beige-100) 70%,
+    var(--color-brand-blue-300) 70%,
+    var(--color-brand-blue-300) 100%
+  );
+  position: relative;
+  display: flex;
+}
+.containerSocialCard {
+  position: absolute;
+  right: calc(20% - 100px);
+  top: 50%;
+  transform: translateY(-50%);
 }
