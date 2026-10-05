@@ -1,0 +1,65 @@
+/* Card Principal (Contêiner) */
+.contactCard {
+  border: 0.2rem dashed var(--color-brand-yellow-100);
+  height: fit-content;
+  padding: 0.8rem;
+  border-radius: 0.4rem;
+}
+
+.contentCard {
+  background-color: var(--color-brand-blue-500);
+  border-radius: 0.8rem;
+  padding: 2.4rem;
+  width: 28rem;
+  color: var(--color-brand-beige-100);
+  box-sizing: border-box;
+  box-shadow: var(--shadow-depth-surface-dark);
+}
+
+/* Título */
+.contactTitle {
+  color: var(--color-brand-yellow-100);
+  padding-bottom: 2.8rem;
+}
+
+/* Lista de Contatos */
+.contactList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+/* Links */
+.contactLink {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  color: var(--color-gray-scale-0);
+  text-decoration: none;
+  font-size: var(--font-size-body-lg);
+  border-radius: 0.6rem;
+  transition:
+    background-color 0.2s ease,
+    transform 0.1s ease;
+}
+
+.contactLink svg {
+  width: 4rem;
+  height: 4rem;
+  flex-shrink: 0;
+}
+
+/* Acessibilidade e Efeitos */
+.contactLink:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateX(0.4rem);
+}
+
+.contactLink:focus-visible {
+  outline: 0.2rem solid var(--color-brand-yellow-100);
+  outline-offset: 0.2rem;
+}
