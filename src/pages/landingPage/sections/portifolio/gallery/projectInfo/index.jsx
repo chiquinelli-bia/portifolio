@@ -12,10 +12,10 @@ export const Info = () => {
       <Heading as="h3" variant="lg" className={styles.projectTitle}>
         {currentProject.title}
       </Heading>
+      <p>{currentProject.description}</p>
       <div className={styles.projectContent}>
         <span className={styles.divider} />
         <div className={styles.content}>
-          <p>{currentProject.description}</p>
           <Heading as="h4" variant="md">
             Funcionalidades
           </Heading>
@@ -43,14 +43,6 @@ export const Info = () => {
             ))}
           </ul>
           <div className={styles.containerButton}>
-            <div>
-              <ButtonLink path={currentProject.links.demo}>
-                Ver Projeto
-              </ButtonLink>
-              <ButtonLink path={currentProject.links.repository}>
-                Ver Código
-              </ButtonLink>
-            </div>
             <ButtonLink className="outline" path="/projetos">
               Outras Obras...
             </ButtonLink>

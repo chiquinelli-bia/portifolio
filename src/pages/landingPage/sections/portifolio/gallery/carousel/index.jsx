@@ -5,6 +5,7 @@ import { useGalleryContext } from "@/contexts/galleryContext/galleryContext";
 import { ProjectSlide } from "./slide";
 import { useEffect } from "react";
 import { ThumbsPreview } from "./thumbsPreview";
+import { ButtonLink } from "@/components/button/buttonLink";
 
 export const Carousel = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -21,6 +22,8 @@ export const Carousel = () => {
     setCurrentImage,
     currentImage,
   } = useGalleryContext();
+
+  const currentProject = projects[currentIndex];
 
   useEffect(() => {
     if (!emblaApi) return;
@@ -68,6 +71,12 @@ export const Carousel = () => {
         ))}
       </div>
       <ThumbsPreview projects={projects} emblaApi={emblaApi} />
+      <div className={styles.containerButtons}>
+        <ButtonLink path={currentProject.links.demo}>Ver Projeto</ButtonLink>
+        <ButtonLink path={currentProject.links.repository}>
+          Ver Código
+        </ButtonLink>
+      </div>
     </div>
   );
 };

@@ -4,6 +4,7 @@
   backface-visibility: hidden;
   flex: 1;
   justify-content: center;
+  margin-top: 3rem;
 }
 .container {
   display: flex;
@@ -46,4 +47,10 @@
 .dotsPagination.active {
   opacity: 1;
   transform: scale(1.15);
+}
+.containerButtons {
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+  margin-top: auto;
 }
