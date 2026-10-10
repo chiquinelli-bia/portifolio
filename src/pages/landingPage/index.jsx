@@ -3,6 +3,7 @@ import { FaleComigo } from "./sections/faleComigo";
 import { Portifolio } from "./sections/portifolio";
 import { Inicio } from "./sections/inicio";
 import { QuemSou } from "./sections/quemSou";
+import { Footer } from "@/components/footer";
 
 export const LandingPage = () => {
   return (
@@ -11,6 +12,7 @@ export const LandingPage = () => {
       <Portifolio />
       <QuemSou />
       <FaleComigo />
+      <Footer />
     </div>
   );
 };

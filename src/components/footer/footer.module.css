@@ -1,0 +1,29 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 4rem;
+  background-color: var(--color-brand-blue-700);
+  color: var(--color-grays-scale-50);
+  align-items: center;
+}
+.containerCopyright {
+  display: flex;
+  font-size: var(--font-size-body-md);
+  max-width: 280px;
+  align-items: center;
+  gap: 0.4rem;
+}
+.containerCopyright small {
+  font-size: var(--font-size-body-lg);
+  font-weight: 500;
+}
+.greeting {
+  font-size: var(--font-size-body-md);
+  font-style: italic;
+}
+.containerActions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.8rem;
+}
