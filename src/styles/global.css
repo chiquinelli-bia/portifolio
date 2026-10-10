@@ -203,6 +203,9 @@ ul,
 ol {
   list-style: none;
 }
+svg text {
+  font-family: var(--font-family-decorative);
+}
 /* =========================================================
    TYPOGRAPHY CLASSES
 ========================================================= */
