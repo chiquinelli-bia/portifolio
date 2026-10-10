@@ -33,7 +33,7 @@ export const QuemSou = () => {
         <Tabs />
 
         <div className={styles.buttonWrapper}>
-          <ButtonLink className="secondary">
+          <ButtonLink className="secondary" path="#contato">
             Gostou do que viu? Vamos conversar.
           </ButtonLink>
         </div>

@@ -20,8 +20,10 @@ export const Inicio = () => {
           que transformam ideias em experiências digitais eficientes.
         </Paragraph>
         <div className={styles.acoesWrapper}>
-          <ButtonLink>Vamos Conversar</ButtonLink>
-          <ButtonLink className="outline">Explorar Projetos</ButtonLink>
+          <ButtonLink path="#contato">Vamos Conversar</ButtonLink>
+          <ButtonLink path="#portifolio" className="outline">
+            Explorar Projetos
+          </ButtonLink>
         </div>
       </div>
       <figure className={styles.fotoWrapper}>

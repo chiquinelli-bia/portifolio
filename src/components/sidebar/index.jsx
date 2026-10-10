@@ -51,6 +51,7 @@ export const Menu = () => {
           className={
             ["contato"].includes(temaAtual?.theme) ? "primary" : "secondary"
           }
+          path="#contato"
         >
           Fale Comigo
         </ButtonLink>
