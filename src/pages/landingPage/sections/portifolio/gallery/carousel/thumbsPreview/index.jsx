@@ -6,12 +6,15 @@ import { useGalleryContext } from "@/contexts/galleryContext/galleryContext";
 export const ThumbsPreview = ({ projects, emblaApi }) => {
   const { currentIndex, setCurrentImage, currentImage } = useGalleryContext();
 
+  const totalProjects = projects.length;
   const totalImages = projects[currentIndex].images.length;
-  const previousIndex = (currentIndex - 1 + totalImages) % totalImages;
-  const nextIndex = (currentIndex + 1) % totalImages;
+
+  // 👈 2. Resto da divisão feito com base no total de PROJETOS:
+  const previousIndex = (currentIndex - 1 + totalProjects) % totalProjects;
+  const nextIndex = (currentIndex + 1) % totalProjects;
+
   const previousProject = projects[previousIndex];
   const nextProject = projects[nextIndex];
-
   const onThumbClick = useCallback(
     (index) => {
       if (!emblaApi) return;
