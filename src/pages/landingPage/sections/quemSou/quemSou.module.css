@@ -52,3 +52,6 @@
   -webkit-background-clip: text;
   color: transparent;
 }
+.buttonWrapper {
+  margin-left: auto;
+}

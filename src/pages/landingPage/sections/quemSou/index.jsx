@@ -31,9 +31,12 @@ export const QuemSou = () => {
           </p>
         </div>
         <Tabs />
-        <ButtonLink className="secondary">
-          Gostou do que viu? Vamos conversar.
-        </ButtonLink>
+
+        <div className={styles.buttonWrapper}>
+          <ButtonLink className="secondary">
+            Gostou do que viu? Vamos conversar.
+          </ButtonLink>
+        </div>
       </div>
     </section>
   );

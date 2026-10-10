@@ -1,6 +1,7 @@
 .container {
   width: fit-content;
   text-align: center;
+  margin-bottom: 4rem;
 }
 
 .container > h2[data-brand="yellow"] {

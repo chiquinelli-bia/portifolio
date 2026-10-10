@@ -3,7 +3,7 @@
   align-items: center;
   background: var(--color-brand-beige-400);
   column-gap: 10rem;
-  padding: 0 10rem;
+  padding: 0 9rem;
 }
 
 .textoDestaque {
@@ -24,6 +24,9 @@
   max-width: 46.5rem;
   width: 100%;
 }
+.acoesWrapper a {
+  white-space: nowrap;
+}
 .conteudoWrapper {
   display: flex;
   flex: 1;
@@ -36,13 +39,14 @@
   display: flex;
   justify-content: center;
   padding-right: 9rem;
+  min-width: 0;
 }
 
 .fotoWrapper::before {
   content: "";
   position: absolute;
-  width: 34.5rem;
-  height: 56rem;
+  width: 32.5rem;
+  height: 54rem;
   background: var(--color-brand-blue-600);
   border-radius: 0 0 35rem 35rem;
   left: 38%;
@@ -52,7 +56,9 @@
 
 .fotoPerfil {
   position: relative;
-  width: 37rem;
-  height: 47rem;
+  width: 35rem;
+  height: 45rem;
+  max-width: 100%; /* Evita que a foto estoure em telas menores */
+  object-fit: cover;
   filter: drop-shadow(var(--shadow-depth-surface-dark));
 }
