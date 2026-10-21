@@ -1,0 +1,152 @@
+.container {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  user-select: none;
+  color: inherit;
+  position: relative;
+}
+
+.disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Estado Desabilitado */
+.container:has(.hiddenInput:disabled),
+.container.disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.hiddenInput {
+  position: absolute;
+  opacity: 0;
+  width: 0.1rem;
+  height: 0.1rem;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+/* Estado default */
+.customCheckbox {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 0.6rem;
+  background: var(--color-brand-beige-100);
+  border: 0.2rem solid var(--color-brand-beige-500);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    background 0.2s ease-in-out,
+    border-color 0.2s ease-in-out,
+    box-shadow 0.2s ease-in-out;
+  box-shadow: var(--shadow-inset-checkbox-default);
+  flex-shrink: 0;
+}
+
+/* Ícone de Checkmark */
+.checkmark {
+  width: 3rem;
+  height: 3rem;
+  stroke: var(--color-brand-beige-100);
+  opacity: 0;
+  transform: scale(0.6);
+  transition:
+    opacity 0.2s ease-in-out,
+    transform 0.2s ease-in-out;
+}
+
+/* --- ESTADOS UNCHECKED --- */
+
+/* Hover / Active Desmarcado */
+.container:hover .hiddenInput:not(:checked) + .customCheckbox,
+.hiddenInput:not(:checked):active + .customCheckbox {
+  border: 0.2rem solid transparent;
+  background-image:
+    linear-gradient(var(--color-brand-beige-100)),
+    conic-gradient(
+      from 180deg at 50% 50%,
+      var(--color-brand-blue-300, #3e7bb0) -18deg,
+      var(--color-brand-blue-300, #3e7bb0) 18deg,
+      var(--color-brand-yellow-300, #e0bd68) 164.45deg,
+      var(--color-brand-yellow-300, #e0bd68) 212.91deg,
+      var(--color-brand-blue-300, #3e7bb0) 342deg,
+      var(--color-brand-blue-300, #3e7bb0) 378deg
+    );
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  box-shadow: var(--shadow-hover-checkbox-unchecked);
+}
+
+/* pressed Desmarcado */
+.container:active .hiddenInput:not(:checked) + .customCheckbox,
+.hiddenInput:not(:checked):active + .customCheckbox {
+  background-image:
+    linear-gradient(
+      180deg,
+      var(--color-brand-yellow-100) 0%,
+      var(--color-brand-blue-100) 100%
+    ),
+    conic-gradient(
+      from 180deg at 50% 50%,
+      var(--color-brand-blue-300, #3e7bb0) -18deg,
+      var(--color-brand-blue-300, #3e7bb0) 18deg,
+      var(--color-brand-yellow-300, #e0bd68) 164.45deg,
+      var(--color-brand-yellow-300, #e0bd68) 212.91deg,
+      var(--color-brand-blue-300, #3e7bb0) 342deg,
+      var(--color-brand-blue-300, #3e7bb0) 378deg
+    );
+}
+
+/* --- ESTADOS CHECKED --- */
+
+/* CHECKED */
+.hiddenInput:checked + .customCheckbox {
+  background: linear-gradient(
+    45deg,
+    var(--color-brand-yellow-300) 13.46%,
+    var(--color-brand-blue-300) 86.54%
+  );
+  border: transparent;
+  box-shadow: var(--shadow-checked-checkbox-default);
+}
+
+.hiddenInput:checked + .customCheckbox .checkmark {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Hover marcado */
+.container:hover .hiddenInput:checked + .customCheckbox,
+.container:active .hiddenInput:checked + .customCheckbox,
+.hiddenInput:checked:active + .customCheckbox {
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)),
+    linear-gradient(
+      47.49deg,
+      var(--color-brand-yellow-300) 14.46%,
+      var(--color-brand-blue-300) 80.94%
+    );
+  box-shadow: var(--shadow-checked-checkbox-default);
+}
+
+/* pressed marcado */
+.container:active .hiddenInput:checked + .customCheckbox,
+.hiddenInput:checked:active + .customCheckbox {
+  box-shadow: var(--shadow-pressed-checkbox-checked);
+}
+
+/* Estado focus */
+.hiddenInput:focus-visible + .customCheckbox {
+  outline: 0.2rem solid var(--color-brand-blue-100);
+  outline-offset: 0.1rem;
+}
+
+.label {
+  font-size: var(--font-size-body-lg);
+}
