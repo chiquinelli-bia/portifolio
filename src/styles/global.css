@@ -127,6 +127,13 @@
   --shadow-highlight-badge: 0 0.1rem 0.4rem #f2d98a;
   --shadow-highlight-progress: 0 0.1rem 0.3rem rgba(242, 217, 138, 0.7);
   --shadow-highlight-technology: 0 0.8rem 2rem #07142266;
+
+  /* === Checkbox Shadows === */
+  --shadow-inset-checkbox-default: 0 0.6rem 0.8rem #00000033;
+  --shadow-hover-checkbox-unchecked: 0 0.8rem 1rem #00000033;
+  --shadow-checked-checkbox-default: 0 0.6rem 0.8rem #00000033;
+  --shadow-pressed-checkbox-checked:
+    inset 0 0 0 2px rgba(255, 255, 255, 0.25), 0 0.8rem 1rem #00000033;
 }
 /* =========================================================
    RESET
