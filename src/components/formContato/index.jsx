@@ -2,7 +2,7 @@ import { useState } from "react";
 import styles from "./form.module.css";
 import { Box } from "@mui/material";
 import { Button } from "../button";
-import { TextFieldEstilized } from "./textFieldEstilized";
+import { TextFieldEstilized } from "../textFieldEstilized";
 import { BsSend } from "react-icons/bs";
 
 export const FormularioContato = () => {
