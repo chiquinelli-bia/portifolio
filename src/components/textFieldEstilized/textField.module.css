@@ -1,8 +1,19 @@
 /* Base compartilhada */
+.customTextArea,
+.customTextField[data-brand="blue"] {
+  --elevation: var(--shadow-depth-surface-yellow);
+  --color-label: var(--color-brand-blue-100);
+}
+.customTextArea,
+.customTextField[data-brand="yellow"] {
+  --elevation: var(--shadow-depth-surface-blue);
+  --color-label: var(--color-brand-yellow-100);
+}
+
 .customTextField {
   background: var(--color-brand-beige-100);
   border-radius: 1rem;
-  box-shadow: var(--shadow-depth-surface-blue);
+  box-shadow: var(--elevation);
 }
 
 /* Container do Filled e Bordas */
@@ -28,7 +39,7 @@
 }
 
 .customTextField :global(.MuiFilledInput-root.Mui-focused) {
-  border-color: var(--color-brand-blue-100);
+  border-color: var(--color-label);
 }
 
 /* Rótulo */
@@ -44,7 +55,7 @@
 /* Estado ativo/encolhido do Rótulo */
 .customTextField :global(.MuiInputLabel-root.Mui-focused),
 .customTextField :global(.MuiInputLabel-root.MuiInputLabel-shrink) {
-  color: var(--color-brand-blue-100);
+  color: var(--color-label);
   font-weight: 600;
 }
 .customTextField :global(.MuiInputLabel-root) :global(.Mui-focused),

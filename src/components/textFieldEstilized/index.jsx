@@ -9,6 +9,7 @@ export const TextFieldEstilized = ({
   variantType = "customInput",
   required = true,
   className = "",
+  data = "blue",
   ...rest
 }) => {
   return (
@@ -21,6 +22,7 @@ export const TextFieldEstilized = ({
       onChange={onChange}
       required={required}
       className={`${styles.customTextField} ${styles[variantType]} ${className}`.trim()}
+      data-brand={data}
       {...rest}
     />
   );
