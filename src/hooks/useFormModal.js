@@ -40,17 +40,20 @@ export const useFormModal = (initialState, toggleFields = []) => {
   };
 
   const getPayload = () => {
-    if (hasToggle) return formData;
+    let payload = formData;
 
-    const payload = { ...formData };
-    const fieldsToReset = Array.isArray(toggleFields)
-      ? toggleFields
-      : [toggleFields];
+    if (!hasToggle) {
+      const fieldsToReset = Array.isArray(toggleFields)
+        ? toggleFields
+        : [toggleFields];
 
-    fieldsToReset.forEach((field) => {
-      if (field in payload) payload[field] = "";
-    });
+      payload = { ...formData };
+      fieldsToReset.forEach((field) => {
+        if (field in payload) payload[field] = "";
+      });
+    }
 
+    handleReset();
     return payload;
   };
 
