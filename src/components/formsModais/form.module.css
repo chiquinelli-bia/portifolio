@@ -1,0 +1,26 @@
+.containerForm {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+  margin: 2rem auto 0; /* Sintaxe resumida: topo, laterais automáticas, base 0 */
+  width: 100%;
+  max-width: 550px;
+}
+.containerActions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1.4rem;
+}
+
+/* Ajuste de responsividade para telas pequenas (ex: smartphones) */
+@media (max-width: 480px) {
+  .containerActions {
+    flex-direction: column-reverse; /* Botão principal fica no topo e Cancelar abaixo */
+    width: 100%;
+  }
+
+  .containerActions > * {
+    width: 100%; /* Garante que os botões ocupem toda a largura no mobile */
+  }
+}
