@@ -2,7 +2,9 @@
   padding: 0.4rem 1.6rem;
   border: 0.2rem solid;
   border-radius: 2.4rem;
-  font-size: 1.6rem;
+  font-size: var(--font-size-button-md);
+  height: fit-content;
+  min-height: 3.8rem;
   font-weight: 700;
   display: inline-flex;
   align-items: center;
