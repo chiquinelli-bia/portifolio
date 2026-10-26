@@ -143,7 +143,7 @@
 
 /* Estado focus */
 .hiddenInput:focus-visible + .customCheckbox {
-  outline: 0.2rem solid var(--color-brand-blue-100);
+  outline: 0.2rem solid color-mix(in srgb, currentColor 40%, transparent);
   outline-offset: 0.1rem;
 }
 
