@@ -1,0 +1,125 @@
+/* 1. Trava a rolagem do fundo da página enquanto o modal estiver aberto */
+html:has(dialog[open]),
+body:has(dialog[open]) {
+  overflow: hidden;
+}
+dialog[data-brand="blue"] {
+  --background: var(--color-brand-yellow-100);
+  --border: var(--color-brand-blue-200);
+  --font: var(--color-grays-scale-1000);
+}
+dialog[data-brand="yellow"] {
+  --border: var(--color-brand-yellow-100);
+  --background: var(--color-brand-blue-100);
+  --font: var(--color-grays-scale-0);
+}
+
+dialog {
+  padding: 0;
+  border-radius: 0.8rem;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  margin: 4rem auto;
+  overflow: visible;
+  max-height: calc(100vh - 8rem);
+
+  width: 90%;
+  max-width: 60rem;
+}
+
+dialog:focus,
+dialog:focus-visible {
+  outline: none;
+}
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(1px);
+}
+
+.modalBorder {
+  padding: 0 2rem;
+  padding-right: 1.2rem;
+  border-radius: 0.8rem;
+  background-color: var(--background);
+  border-width: 2rem;
+  border-top: 2rem solid var(--background);
+  border-bottom: 2rem solid var(--background);
+
+  max-height: calc(100vh - 7rem);
+  overflow-y: auto;
+
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+
+.modalBorder::before {
+  content: "";
+  position: absolute;
+  top: 2rem;
+  bottom: 1rem;
+  left: 2rem;
+  right: 2rem;
+  border: 0.3rem solid var(--border);
+  border-radius: 0.4rem;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.modalBorder::-webkit-scrollbar {
+  width: 0.8rem;
+}
+
+.modalBorder::-webkit-scrollbar-track {
+  background: transparent;
+  margin: 0.8rem 0;
+}
+
+.modalBorder::-webkit-scrollbar-thumb {
+  background-color: var(--border);
+  border-radius: 2rem;
+}
+
+.modalBorder::-webkit-scrollbar-thumb:hover {
+  filter: brightness(0.85);
+}
+.modalContent {
+  padding: 2rem;
+  background-color: var(--background);
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.selo {
+  position: absolute;
+  top: -3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.closeModal {
+  position: absolute;
+  top: -3.2rem;
+  right: 0.2rem;
+  z-index: 10;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: var(--color-grays-scale-300);
+}
+
+.modalHeader {
+  display: flex;
+  gap: 1.4rem;
+  flex-direction: column;
+  align-items: center;
+  color: var(--font);
+}
+
+.modalHeader p {
+  font-weight: 700;
+}
