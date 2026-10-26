@@ -1,8 +1,8 @@
 import { SectionHeader } from "@/components/sectionHeader";
 import styles from "./contato.module.css";
 import { sections } from "@/data/navThemes";
-import { FormularioContato } from "@/components/form";
-import { SocialLinksCard } from "../../../../components/socialLinksCard";
+import { FormularioContato } from "@/components/formContato";
+import { SocialLinksCard } from "@/components/socialLinksCard";
 
 export const FaleComigo = () => {
   return (
