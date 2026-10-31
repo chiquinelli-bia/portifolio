@@ -8,6 +8,7 @@ import { useState } from "react";
 export const useFormModal = (initialState, toggleFields = []) => {
   const [hasToggle, setHasToggle] = useState(false);
   const [formData, setFormData] = useState(initialState);
+  const [rating, setRating] = useState(0);
 
   const handleChange = (field) => (event) => {
     const { value } = event.target;
@@ -37,6 +38,7 @@ export const useFormModal = (initialState, toggleFields = []) => {
   const handleReset = () => {
     setFormData(initialState);
     setHasToggle(false);
+    setRating(0);
   };
 
   const getPayload = () => {
@@ -47,7 +49,7 @@ export const useFormModal = (initialState, toggleFields = []) => {
         ? toggleFields
         : [toggleFields];
 
-      payload = { ...formData };
+      payload = { ...formData, rating };
       fieldsToReset.forEach((field) => {
         if (field in payload) payload[field] = "";
       });
@@ -60,6 +62,8 @@ export const useFormModal = (initialState, toggleFields = []) => {
   return {
     formData,
     hasToggle,
+    rating,
+    setRating,
     handleChange,
     handleToggleChange,
     handleReset,
