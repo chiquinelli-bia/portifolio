@@ -5,6 +5,7 @@ import { TextFieldEstilized } from "../textFieldEstilized";
 import { Tag } from "../tag";
 import { Checkbox } from "../checkBox";
 import { useFormModal } from "../../hooks/useFormModal";
+import { RatingMedals } from "../ratingMedals";
 
 const INITIAL_STATE = {
   comentario: "",
@@ -19,15 +20,17 @@ export const FormularioFeedback = () => {
   const {
     formData,
     hasToggle: autorizaPublicacao,
+    rating,
+    setRating,
     handleChange,
     handleToggleChange,
     handleReset,
     getPayload,
   } = useFormModal(INITIAL_STATE, CONDITIONAL_FIELDS);
-
   const handleSubmit = (e) => {
     e.preventDefault();
     const payload = getPayload();
+
     console.log("Dados do feedback:", payload);
   };
 
@@ -38,6 +41,7 @@ export const FormularioFeedback = () => {
       onSubmit={handleSubmit}
       style={{ color: "var(--color-grays-scale-0)" }}
     >
+      <RatingMedals value={rating} onChange={setRating} />
       <TextFieldEstilized
         multiline
         rows={8}
