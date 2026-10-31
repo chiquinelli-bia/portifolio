@@ -1,0 +1,88 @@
+.fieldset {
+  border: none;
+  padding: 0;
+  margin-bottom: 1.2rem;
+}
+
+.legend {
+  font-size: var(--font-size-body-md);
+  color: var(--color-grays-scale-200);
+  font-weight: 700;
+  text-align: end;
+  margin-bottom: 1.2rem;
+}
+
+.medalsGroup {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 1.2rem;
+  padding: 2.4rem 0 1rem;
+}
+
+.medalLabel {
+  position: relative;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Posicionamento em arco de 5 medalhas */
+.medalLabel:nth-child(1),
+.medalLabel:nth-child(5) {
+  transform: translateY(2.8rem);
+}
+
+.medalLabel:nth-child(2),
+.medalLabel:nth-child(4) {
+  transform: translateY(0);
+}
+
+.medalLabel:nth-child(3) {
+  transform: translateY(-2.8rem);
+}
+
+.radioInput {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.radioInput:focus-visible + .medalImage {
+  outline: 0.2rem solid #3b82f6;
+  outline-offset: 0.4rem;
+  border-radius: 50%;
+}
+
+/* --- ESTADOS DA MEDALHA --- */
+
+/* Default: escurecida + sombra padrão */
+.medalImage {
+  filter: brightness(0.35) grayscale(0.2)
+    drop-shadow(var(--shadow-depth-surface-blue));
+  transition:
+    filter 0.2s ease,
+    transform 0.2s ease;
+  user-select: none;
+}
+
+/* Hover: reduz tamanho, ilumina um pouco + sombra destacada */
+.medalLabel:hover .medalImage {
+  transform: scale(0.9);
+  filter: brightness(0.7) grayscale(0.1)
+    drop-shadow(var(--shadow-highlight-surface-blue));
+}
+
+/* Selecionada: cor normal acesa + sombra destacada */
+.medalImage.filled {
+  filter: brightness(1) grayscale(0)
+    drop-shadow(var(--shadow-highlight-surface-blue));
+}
+
+/* Efeito ao pressionar o clique */
+.medalLabel:active .medalImage {
+  transform: scale(0.82);
+}
