@@ -42,20 +42,23 @@ export const useFormModal = (initialState, toggleFields = []) => {
   };
 
   const getPayload = () => {
-    let payload = formData;
+    const payload = { ...formData };
+
+    // Inclui a propriedade rating apenas se o valor for maior que 0
+    if (rating > 0) {
+      payload.rating = rating;
+    }
 
     if (!hasToggle) {
       const fieldsToReset = Array.isArray(toggleFields)
         ? toggleFields
         : [toggleFields];
-
-      payload = { ...formData, rating };
       fieldsToReset.forEach((field) => {
         if (field in payload) payload[field] = "";
       });
     }
-
     handleReset();
+    console.log(payload);
     return payload;
   };
 

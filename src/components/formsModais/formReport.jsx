@@ -26,8 +26,7 @@ export const FormularioReport = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const payload = getPayload();
-    console.log("Dados do report:", payload);
+    getPayload();
   };
 
   return (
