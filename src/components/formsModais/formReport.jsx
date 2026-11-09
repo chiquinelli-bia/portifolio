@@ -5,14 +5,11 @@ import { TextFieldEstilized } from "../textFieldEstilized";
 import { Tag } from "../tag";
 import { Checkbox } from "../checkBox";
 import { useFormModal } from "../../hooks/useFormModal";
+import { SubmitBugReportUseCase } from "../../application/submitBugReportUseCase";
+import { FirestoreBugReporRepository } from "../../infra/config/firestoreBugReportRepository";
 
-const INITIAL_STATE = {
-  problema: "",
-  onde: "",
-  email: "",
-};
-
-const CONDITIONAL_FIELDS = ["email"];
+const reportRepository = new FirestoreBugReporRepository();
+const submitReportUseCase = new SubmitBugReportUseCase(reportRepository);
 
 export const FormularioReport = () => {
   const {
@@ -21,12 +18,21 @@ export const FormularioReport = () => {
     handleChange,
     handleToggleChange,
     handleReset,
-    getPayload,
-  } = useFormModal(INITIAL_STATE, CONDITIONAL_FIELDS);
+    submitForm,
+    loading,
+    feedbackMsg,
+  } = useFormModal(
+    { problema: "", onde: "", email: "" }, // Adicionado email no estado inicial
+    ["email"],
+  );
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    getPayload();
+    submitForm(
+      submitReportUseCase,
+      "desejaRetorno",
+      "Relato de bug enviado com sucesso! Vamos analisar o problema.",
+    );
   };
 
   return (
@@ -69,9 +75,15 @@ export const FormularioReport = () => {
           variantType="customInput"
         />
       )}
-
+      {feedbackMsg.text && (
+        <p style={{ color: feedbackMsg.isError ? "red" : "green" }}>
+          {feedbackMsg.text}
+        </p>
+      )}
       <Box className={styles.containerActions}>
-        <Button type="submit">Enviar Relato</Button>
+        <Button type="submit">
+          {loading ? "Enviando relato..." : "Enviar Relato"}
+        </Button>
         <Tag onClick={handleReset}>Cancelar</Tag>
       </Box>
     </Box>

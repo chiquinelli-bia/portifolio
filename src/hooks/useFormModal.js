@@ -47,9 +47,11 @@ export const useFormModal = (initialState, toggleFields = []) => {
   /**
    * Monta o payload limpo com base nos campos e toggles ativos.
    */
-  const getPayload = () => {
-    const payload = { ...formData, autorizaPublicacao: hasToggle };
-
+  const getPayload = (toggleKey) => {
+    const payload = { ...formData };
+    if (toggleKey) {
+      payload[toggleKey] = hasToggle;
+    }
     if (rating > 0) {
       payload.rating = rating;
     }
@@ -73,13 +75,14 @@ export const useFormModal = (initialState, toggleFields = []) => {
    */
   const submitForm = async (
     useCase,
+    toggleKey,
     successMessage = "Enviado com sucesso!",
   ) => {
     setLoading(true);
     setFeedbackMsg({ text: "", isError: false });
 
     try {
-      const payload = getPayload();
+      const payload = getPayload(toggleKey);
       await useCase.execute(payload);
 
       setFeedbackMsg({ text: successMessage, isError: false });

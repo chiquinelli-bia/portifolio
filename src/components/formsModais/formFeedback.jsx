@@ -18,7 +18,7 @@ export const FormularioFeedback = () => {
     formData,
     rating,
     setRating,
-    hasToggle,
+    hasToggle: autorizaPublicacao,
     handleChange,
     handleToggleChange,
     handleReset,
@@ -34,6 +34,7 @@ export const FormularioFeedback = () => {
     e.preventDefault();
     submitForm(
       submitFeedbackUseCase,
+      "autorizaPublicacao",
       "Feedback enviado com sucesso! Obrigado!",
     );
   };
@@ -60,11 +61,11 @@ export const FormularioFeedback = () => {
 
       <Checkbox
         label="Autoriza publicar seu comentário? (opcional)"
-        checked={hasToggle}
+        checked={autorizaPublicacao}
         onChange={handleToggleChange}
       />
 
-      {hasToggle && (
+      {autorizaPublicacao && (
         <>
           <TextFieldEstilized
             data="yellow"
