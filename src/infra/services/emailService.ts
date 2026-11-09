@@ -17,7 +17,7 @@ export class EmailService {
     const templateParams = {
       from_name: contactData.nome,
       from_email: contactData.email,
-      subject: contactData.assunto || "Nova mensagem do Portfólio",
+      subject: "Nova mensagem do Portfólio",
       message: contactData.mensagem,
     };
 

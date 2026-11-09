@@ -149,11 +149,6 @@ export class DiscordWebhookService {
               value: contactData.email,
               inline: true,
             },
-            {
-              name: "Assunto",
-              value: contactData.assunto || "Sem assunto",
-              inline: false,
-            },
           ],
           timestamp: new Date().toISOString(),
         },
