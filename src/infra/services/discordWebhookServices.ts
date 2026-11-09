@@ -1,5 +1,6 @@
 import { IBugReport } from "../../domain/entities/IBugReport";
 import { IFeedback } from "../../domain/entities/IFeedback";
+import { IContact } from "../../domain/entities/IContact";
 
 export class DiscordWebhookService {
   static async sendFeedbackNotification(
@@ -118,6 +119,60 @@ export class DiscordWebhookService {
       });
     } catch (error) {
       console.error("Erro ao enviar notificação de bug para o Discord:", error);
+    }
+  }
+  static async sendContactNotification(
+    contactData: IContact,
+    webhookUrl: string,
+  ): Promise<void> {
+    if (!webhookUrl) {
+      console.warn("URL do Webhook do Discord para contato não foi fornecida.");
+      return;
+    }
+
+    const PURPLE_COLOR = 10181046;
+
+    const payload = {
+      embeds: [
+        {
+          title: "✉️ Nova Carta/Mensagem de Contato!",
+          description: contactData.mensagem,
+          color: PURPLE_COLOR,
+          fields: [
+            {
+              name: "Nome",
+              value: contactData.nome,
+              inline: true,
+            },
+            {
+              name: "E-mail",
+              value: contactData.email,
+              inline: true,
+            },
+            {
+              name: "Assunto",
+              value: contactData.assunto || "Sem assunto",
+              inline: false,
+            },
+          ],
+          timestamp: new Date().toISOString(),
+        },
+      ],
+    };
+
+    try {
+      await fetch(webhookUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+    } catch (error) {
+      console.error(
+        "Erro ao enviar notificação de contato para o Discord:",
+        error,
+      );
     }
   }
 }
