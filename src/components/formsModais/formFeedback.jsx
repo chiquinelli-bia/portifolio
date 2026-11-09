@@ -1,37 +1,42 @@
 import styles from "./form.module.css";
-import { Box } from "@mui/material";
-import { Button } from "../button";
-import { TextFieldEstilized } from "../textFieldEstilized";
-import { Tag } from "../tag";
-import { Checkbox } from "../checkBox";
 import { useFormModal } from "../../hooks/useFormModal";
+
+import { Button } from "../button";
+import { Box } from "@mui/material";
+import { Tag } from "../tag";
+import { TextFieldEstilized } from "../textFieldEstilized";
+import { Checkbox } from "../checkBox";
 import { RatingMedals } from "../ratingMedals";
+import { FirestoreFeedbackRepository } from "../../infra/config/firebaseFeedbackRepository";
+import { SubmitFeedbackUseCase } from "../../application/submitFeedbackUseCase";
 
-const INITIAL_STATE = {
-  comentario: "",
-  nome: "",
-  contato: "",
-};
-
-// Campos que devem ser limpos caso a autorização seja desmarcada
-const CONDITIONAL_FIELDS = ["nome", "contato"];
+const feedbackRepository = new FirestoreFeedbackRepository();
+const submitFeedbackUseCase = new SubmitFeedbackUseCase(feedbackRepository);
 
 export const FormularioFeedback = () => {
   const {
     formData,
-    hasToggle: autorizaPublicacao,
     rating,
     setRating,
+    hasToggle: autorizaPublicacao,
     handleChange,
     handleToggleChange,
     handleReset,
-    getPayload,
-  } = useFormModal(INITIAL_STATE, CONDITIONAL_FIELDS);
+    submitForm,
+    loading,
+    feedbackMsg,
+  } = useFormModal({ comentario: "", nome: "", contato: "" }, [
+    "nome",
+    "contato",
+  ]);
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    const payload = getPayload();
-
-    console.log("Dados do feedback:", payload);
+    submitForm(
+      submitFeedbackUseCase,
+      "autorizaPublicacao",
+      "Feedback enviado com sucesso! Obrigado!",
+    );
   };
 
   return (
@@ -42,6 +47,7 @@ export const FormularioFeedback = () => {
       style={{ color: "var(--color-grays-scale-0)" }}
     >
       <RatingMedals value={rating} onChange={setRating} />
+
       <TextFieldEstilized
         multiline
         rows={8}
@@ -82,9 +88,15 @@ export const FormularioFeedback = () => {
         </>
       )}
 
+      {feedbackMsg.text && (
+        <p style={{ color: feedbackMsg.isError ? "red" : "green" }}>
+          {feedbackMsg.text}
+        </p>
+      )}
+
       <Box className={styles.containerActions}>
-        <Button type="submit" className="secondary">
-          Enviar Relato
+        <Button type="submit" className="secondary" disabled={loading}>
+          {loading ? "Enviando..." : "Enviar Avaliação"}
         </Button>
         <Tag onClick={handleReset} className="secondary">
           Cancelar

@@ -4,19 +4,23 @@ import { Button } from "../button";
 import { TextFieldEstilized } from "../textFieldEstilized";
 import { BsSend } from "react-icons/bs";
 import { useFormModal } from "@/hooks/useFormModal";
+import { FirestoreContactRepository } from "../../infra/config/firestoreContactRepository";
+import { SubmitContactUseCase } from "../../application/submitContactUseCase";
 
-const INITIAL_STATE = {
-  nome: "",
-  email: "",
-  mensagem: "",
-};
+const contactRepository = new FirestoreContactRepository();
+const submitContactUseCase = new SubmitContactUseCase(contactRepository);
 
 export const FormularioContato = () => {
-  const { formData, handleChange, getPayload } = useFormModal(INITIAL_STATE);
+  const { formData, handleChange, submitForm, loading, feedbackMsg } =
+    useFormModal({ nome: "", email: "", mensagem: "" });
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    getPayload();
+    submitForm(
+      submitContactUseCase,
+      null,
+      "mensagem enviada com sucesso! Obrigado!",
+    );
   };
 
   return (
@@ -54,12 +58,16 @@ export const FormularioContato = () => {
         variantType="customTextArea"
         data="yellow"
       />
-
+      {feedbackMsg.text && (
+        <p style={{ color: feedbackMsg.isError ? "red" : "green" }}>
+          {feedbackMsg.text}
+        </p>
+      )}
       <Box
         sx={{ display: "flex", justifyContent: "flex-end", marginTop: "8px" }}
       >
-        <Button className="secondary" type="submit">
-          Enviar Carta <BsSend size={25} />
+        <Button className="secondary" type="submit" disabled={loading}>
+          {loading ? "Enviando Carta..." : "Enviar Carta"} <BsSend size={25} />
         </Button>
       </Box>
     </Box>
