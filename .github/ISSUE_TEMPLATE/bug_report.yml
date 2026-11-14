@@ -1,0 +1,61 @@
+name: Relatar um Bug
+description: Encontrou algum erro visual, de funcionalidade ou acessibilidade? Abra um chamado aqui.
+title: "[Bug]: "
+labels: ["bug", "triagem"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Obrigada por ajudar a melhorar este projeto! Preencha os detalhes abaixo para que eu consiga reproduzir o problema.
+
+  - type: textarea
+    id: descricao
+    attributes:
+      label: O que aconteceu?
+      description: Descreva de forma clara e objetiva qual foi o comportamento inesperado.
+      placeholder: Ex. Ao clicar no botão de enviar formulário, o modal não fecha.
+    validations:
+      required: true
+
+  - type: textarea
+    id: passos
+    attributes:
+      label: Como reproduzir o erro?
+      description: Liste o passo a passo para chegar até o problema.
+      value: |
+        1. Acesse a página '...'
+        2. Clique em '...'
+        3. Veja o erro
+    validations:
+      required: true
+
+  - type: textarea
+    id: esperado
+    attributes:
+      label: Comportamento esperado
+      description: O que deveria ter acontecido normalmente?
+    validations:
+      required: true
+
+  - type: dropdown
+    id: ambiente
+    attributes:
+      label: Navegador / Dispositivo
+      options:
+        - Google Chrome (Desktop)
+        - Mozilla Firefox (Desktop)
+        - Safari / iOS (Mobile)
+        - Chrome / Android (Mobile)
+        - Outro
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: impacto
+    attributes:
+      label: Categoria do problema
+      options:
+        - label: Quebra de layout / Responsividade
+        - label: Erro de funcionalidade / Lógica
+        - label: Problema de acessibilidade (navegação por teclado, contraste, leitor de tela)
