@@ -1,0 +1,36 @@
+name: CI - Qualidade, Testes e Build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  qualidade-e-build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Baixar código do repositório
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "npm"
+
+      - name: Instalar dependências
+        run: npm ci
+
+      - name: Verificar tipagem TypeScript
+        run: npx tsc --noEmit
+
+      - name: Verificar ESLint
+        run: npm run lint
+
+      - name: Executar testes automatizados
+        run: npm test -- --watchAll=false
+
+      - name: Testar build de produção (Vite)
+        run: npm run build
