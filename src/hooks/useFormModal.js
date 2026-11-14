@@ -1,14 +1,16 @@
 import { useState } from "react";
 
 /**
- * Hook para gerenciar estado e exibição condicional em formulários modais.
- * @param {Object} initialState - Estado inicial dos campos do formulário.
- * @param {string|string[]} toggleFields - Campo(s) que dependem da autorização/toggle.
+ * Hook para gerenciar estado, exibição condicional e submissão de formulários modais.
+ * @param {Object} initialState Estado inicial dos campos do formulário.
+ * @param {string|string[]} toggleFields Campo(s) que dependem da autorização/toggle.
  */
 export const useFormModal = (initialState, toggleFields = []) => {
   const [hasToggle, setHasToggle] = useState(false);
   const [formData, setFormData] = useState(initialState);
   const [rating, setRating] = useState(0);
+  const [loading, setLoading] = useState(false);
+  const [feedbackMsg, setFeedbackMsg] = useState({ text: "", isError: false });
 
   const handleChange = (field) => (event) => {
     const { value } = event.target;
@@ -39,12 +41,17 @@ export const useFormModal = (initialState, toggleFields = []) => {
     setFormData(initialState);
     setHasToggle(false);
     setRating(0);
+    setFeedbackMsg({ text: "", isError: false });
   };
 
-  const getPayload = () => {
+  /**
+   * Monta o payload limpo com base nos campos e toggles ativos.
+   */
+  const getPayload = (toggleKey) => {
     const payload = { ...formData };
-
-    // Inclui a propriedade rating apenas se o valor for maior que 0
+    if (toggleKey) {
+      payload[toggleKey] = hasToggle;
+    }
     if (rating > 0) {
       payload.rating = rating;
     }
@@ -57,9 +64,41 @@ export const useFormModal = (initialState, toggleFields = []) => {
         if (field in payload) payload[field] = "";
       });
     }
-    handleReset();
-    console.log(payload);
+
     return payload;
+  };
+
+  /**
+   * Executa a submissão via Use Case injetado, controlando loading, erros e resets.
+   * @param {Object} useCase Instância do caso de uso (deve conter o método execute).
+   * @param {string} successMessage Mensagem exibida em caso de sucesso.
+   */
+  const submitForm = async (
+    useCase,
+    toggleKey,
+    successMessage = "Enviado com sucesso!",
+  ) => {
+    setLoading(true);
+    setFeedbackMsg({ text: "", isError: false });
+
+    try {
+      const payload = getPayload(toggleKey);
+      await useCase.execute(payload);
+
+      setFeedbackMsg({ text: successMessage, isError: false });
+
+      // Reseta os inputs do formulário mantendo a mensagem de sucesso
+      setFormData(initialState);
+      setHasToggle(false);
+      setRating(0);
+    } catch (error) {
+      setFeedbackMsg({
+        text: error.message || "Ocorreu um erro ao enviar. Tente novamente.",
+        isError: true,
+      });
+    } finally {
+      setLoading(false);
+    }
   };
 
   return {
@@ -71,5 +110,8 @@ export const useFormModal = (initialState, toggleFields = []) => {
     handleToggleChange,
     handleReset,
     getPayload,
+    submitForm,
+    loading,
+    feedbackMsg,
   };
 };
