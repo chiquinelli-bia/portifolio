@@ -1,0 +1,235 @@
+.wrapper {
+  --color-gold-bg: var(--color-brand-yellow-100);
+  --color-royal-blue: var(--color-brand-blue-200);
+  --color-hover-blue: var(--color-brand-blue-300);
+  --color-text: var(--color-grays-scale-1000);
+  --color-placeholder: #664c0abf;
+  --color-outline-yellow: rgba(138, 120, 66, 0.5);
+  position: relative;
+  width: 100%;
+  max-width: 78rem;
+  margin: 2rem auto;
+  padding: 0.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 1.2rem;
+  transition:
+    outline-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.wrapper:hover .lineWrapper {
+  filter: drop-shadow(var(--drop-shadow-search-hover));
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* --- SEÇÃO SUPERIOR (LUPA + LINHA) --- */
+.topSection {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.searchBadge {
+  position: absolute;
+  left: 8%;
+  width: 5.4rem;
+  height: 5.4rem;
+  border-radius: 50%;
+  background-color: var(--color-royal-blue);
+  color: var(--color-gold-bg);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  outline: 0.2rem solid transparent;
+  outline-offset: 0.3rem;
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease,
+    outline-color 0.2s ease;
+  z-index: 2;
+}
+
+.searchBadge:hover {
+  transform: scale(1.06);
+  background-color: var(--color-hover-blue);
+}
+
+.searchBadge svg {
+  width: 3.5rem;
+  height: 3.5rem;
+}
+
+/* --- LINHAS COM FADE-OUT E ENCAIXE DO SVG --- */
+.lineWrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: filter 0.25s ease;
+}
+
+.inverted {
+  transform: scaleY(-1);
+  width: 85%;
+}
+
+.inverted .lineLeft,
+.inverted .lineRight {
+  height: 3px;
+}
+
+.lineLeft,
+.lineRight {
+  flex: 1;
+  height: 0.35rem;
+}
+
+.lineLeft {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--color-royal-blue) 40%
+  );
+}
+
+.lineRight {
+  background: linear-gradient(
+    270deg,
+    transparent 0%,
+    var(--color-royal-blue) 40%
+  );
+}
+
+.centerSvgContainer {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 -10px;
+}
+
+.centerSvgContainer svg {
+  display: block;
+}
+
+/* --- INPUT CENTRAL --- */
+.inputContainer {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem 12rem;
+  margin: -0.4rem 0;
+  z-index: 1;
+}
+
+.input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  text-align: center;
+  font-family: inherit;
+  font-size: var(--font-size-body-lg);
+  color: var(--color-text);
+  line-height: 1.4;
+}
+
+.input::placeholder {
+  color: var(--color-placeholder);
+}
+
+.input::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.clearButton {
+  position: absolute;
+  right: 12%;
+  background: transparent;
+  border: none;
+  color: var(--color-placeholder);
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.4rem;
+  font-weight: 700;
+  outline: 0.2rem solid transparent;
+  outline-offset: 0.2rem;
+  transition:
+    opacity 0.2s ease,
+    color 0.2s ease,
+    background-color 0.2s ease,
+    outline-color 0.2s ease;
+}
+
+.clearButton:hover {
+  opacity: 0.7;
+}
+
+/* --- ESTADOS DE FOCO --- */
+.wrapper:has(:focus-visible) .lineWrapper {
+  filter: drop-shadow(var(--drop-shadow-search-focus-visible));
+}
+
+.wrapper.keyboardFocus .lineWrapper {
+  filter: drop-shadow(var(--drop-shadow-search-focus-keyboard));
+}
+
+.searchBadge:focus-visible {
+  outline-color: var(--color-outline-yellow);
+  transform: scale(1.06);
+  background-color: var(--color-hover-blue);
+}
+
+.clearButton:focus-visible {
+  outline-color: var(--color-royal-blue);
+  color: var(--color-royal-blue);
+  background-color: rgba(38, 97, 150, 0.08);
+}
+
+/* --- RESPONSIVIDADE (MOBILE) --- */
+@media (max-width: 600px) {
+  .searchBadge {
+    left: 2%;
+    width: 4.2rem;
+    height: 4.2rem;
+  }
+
+  .searchBadge svg {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .inputContainer {
+    padding: 0.25rem 4.8rem;
+  }
+
+  .input {
+    font-size: 1.4rem;
+  }
+
+  .clearButton {
+    right: 4%;
+  }
+}
