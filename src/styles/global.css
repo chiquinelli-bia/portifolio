@@ -128,12 +128,17 @@
   --shadow-highlight-progress: 0 0.1rem 0.3rem rgba(242, 217, 138, 0.7);
   --shadow-highlight-technology: 0 0.8rem 2rem #07142266;
 
-  /* === Checkbox Shadows === */
+  /* Checkbox Shadows */
   --shadow-inset-checkbox-default: 0 0.6rem 0.8rem #00000033;
   --shadow-hover-checkbox-unchecked: 0 0.8rem 1rem #00000033;
   --shadow-checked-checkbox-default: 0 0.6rem 0.8rem #00000033;
   --shadow-pressed-checkbox-checked:
     inset 0 0 0 2px rgba(255, 255, 255, 0.25), 0 0.8rem 1rem #00000033;
+  /* Search */
+  --drop-shadow-search-hover: 0 0.2rem 0.8rem rgba(163, 135, 49, 0.4);
+  --drop-shadow-search-focus: 0 0.4rem 1.4rem rgba(163, 135, 49, 0.8);
+  --drop-shadow-search-focus-keyboard: 0.2rem 0.1rem 0.4rem
+    rgba(163, 135, 49, 1);
 }
 /* =========================================================
    RESET
