@@ -10,7 +10,7 @@ export const itensNav = [
     icon: IoHomeOutline,
   },
   {
-    id: "portfolio",
+    id: "portifolio",
     texto: "Portifolio",
     rota: "/#portifolio",
     icon: IoMdImages,

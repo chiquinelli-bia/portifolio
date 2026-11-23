@@ -1,7 +1,7 @@
 import { ButtonLink } from "@/components/button/buttonLink";
 import Navigation from "./navigationList";
 import styles from "./sidebar.module.css";
-import { itensNav } from "./navItens";
+import { itensNav } from "@/data/navItens";
 import { useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { useActiveSection } from "@/hooks/useActiveSection";
