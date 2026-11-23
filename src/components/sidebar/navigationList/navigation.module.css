@@ -17,6 +17,7 @@
 }
 .menuItem button {
   color: inherit;
+  transition: transform 0.3s ease;
 }
 .menuItem svg {
   fill: currentColor;
@@ -26,7 +27,9 @@
   transition: transform 0.3s ease;
 }
 
-.menuItem:hover > div > button {
+.menuHeader:has(:focus-visible) button,
+.menuItem:hover > div > button,
+.active + button {
   transform: rotate(180deg);
 }
 
@@ -44,9 +47,6 @@
 .menuLink.active,
 .menuLink.active + button {
   color: var(--nav-active-text);
-}
-.active + button {
-  transform: rotate(180deg);
 }
 
 .menuItem:hover {
@@ -70,7 +70,11 @@
   border-radius: 0 0.2rem 0 0;
   color: var(--nav-text);
 }
-.subItem:hover {
+.subItem:hover a:not(.subActive) {
   color: var(--nav-text-hover);
+  font-weight: 700;
+}
+.subActive {
+  color: var(--selector-active-bg);
   font-weight: 700;
 }
