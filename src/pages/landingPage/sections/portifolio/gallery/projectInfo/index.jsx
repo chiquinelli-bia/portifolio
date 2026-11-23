@@ -43,7 +43,7 @@ export const Info = () => {
             ))}
           </ul>
           <div className={styles.containerButton}>
-            <ButtonLink className="outline" path="/projetos">
+            <ButtonLink className="outline" path="/outras-obras">
               Outras Obras...
             </ButtonLink>
           </div>
