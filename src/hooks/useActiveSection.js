@@ -1,10 +1,20 @@
 import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
+import { itensNav } from "../data/navItens";
 
 export function useActiveSection() {
-  const [activeSection, setActiveSection] = useState([0]);
+  const { pathname } = useLocation();
+  const [activeSection, setActiveSection] = useState("home");
+
+  const parentItem = itensNav.find(
+    (item) => item.subItem && pathname.startsWith(item.subItem.rota),
+  );
 
   useEffect(() => {
-    const sections = document.querySelectorAll("section");
+    // Se estamos numa subpágina, não precisa observar scroll
+    if (parentItem) return;
+
+    const sections = document.querySelectorAll("section[id]");
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -19,14 +29,10 @@ export function useActiveSection() {
       },
     );
 
-    sections.forEach((section) => {
-      observer.observe(section);
-    });
+    sections.forEach((section) => observer.observe(section));
 
-    return () => {
-      observer.disconnect();
-    };
-  }, []);
+    return () => observer.disconnect();
+  }, [pathname, parentItem]);
 
-  return activeSection;
+  return parentItem ? parentItem.id : activeSection;
 }

@@ -17,10 +17,10 @@ const NavigationList = ({
     <ul className={`${styles.showDropdown} ${styles.menu}`}>
       {itens.map((item) => {
         const Icon = item.icon;
-        const isCurrentPage = location.pathname === item.rota.split("#")[0];
-        const isActive = isCurrentPage
-          ? activeSection === item.rota.split("#")[1]
-          : "";
+        const hashDaRota = item.rota.split("#")[1];
+        const isActive = activeSection === hashDaRota;
+        const isSubActive =
+          item.subItem && location.pathname.startsWith(item.subItem.rota);
         const isOpen = openSubmenu === item.id || isActive;
 
         return (
@@ -54,11 +54,10 @@ const NavigationList = ({
                 id={`submenu-${item.subItem.id}`}
                 className={`${styles.subList} ${isOpen ? styles.open : ""}`}
               >
-                {" "}
                 <li className={styles.subItem}>
                   <HashLink
                     to={item.subItem.rota}
-                    className={styles.menuLink}
+                    className={`${styles.menuLink} ${isSubActive ? styles.subActive : ""}`}
                     smooth={item.subItem.rota.startsWith("/#")}
                   >
                     {item.subItem.texto}
